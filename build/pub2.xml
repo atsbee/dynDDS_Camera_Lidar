@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<types xmlns="http://www.eprosima.com/XMLSchemas/fastRTPS_Profiles" >
+    <type>
+        <struct name="SensorData2">
+            <member name="arraysize" type="uint16"/>
+            <member name="array" type="uint16" arrayDimensions="1,120"/>
+            <member name="arrayid" type="uint16"/>
+        </struct>
+    </type>
+</types>
