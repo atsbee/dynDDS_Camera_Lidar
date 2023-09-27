@@ -58,8 +58,9 @@ int main()
     std::uint16_t cscan2[362]={0};
 
     //x offset and theta offset
-    double x_offset2 = 750;
-    float theta_offset2 = 45;    
+    double x_offset2 = 0;
+    //TODO: y_offset2
+    float theta_offset2 = 0;    
 
     // current xys and istnulls
     std::vector<double> xs2, ys2;
@@ -133,9 +134,9 @@ int main()
     sf::ConvexShape triangle;
     
     // Set the initial position, color, and vertices for the triangle
-    sf::Vector2f point1(750, 0);
-    sf::Vector2f point2(-2056, 1620);
-    sf::Vector2f point3(3556, 1620);
+    sf::Vector2f point1(0, -685);
+    sf::Vector2f point2(-2880, -685);
+    sf::Vector2f point3(-2880, 6784);
 
     createTriangle(triangle, sf::Color(230, 230, 230,120), sf::Color(0, 0, 255, 120), point1, point2, point3);
 
