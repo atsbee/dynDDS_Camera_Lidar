@@ -3,8 +3,8 @@
     <type>
         <struct name="FrameCamera">
 	    <member name="index" type="uint32"/>
-        <member name="irFrame" type="uint16" arrayDimensions="1,(307200)"/>
-	    <member name="depthFrame" type="uint16" arrayDimensions="1,(307200)"/>
+        <member name="irFrame" type="uint16" arrayDimensions="1,307200"/>
+	    <member name="depthFrame" type="uint16" arrayDimensions="1,307200"/>
         <member name="cameraRange" type="uint16"/>
         </struct>
     </type>
