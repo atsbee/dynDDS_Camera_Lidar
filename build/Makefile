@@ -181,6 +181,56 @@ visumainSub/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/visumainSub.dir/build.make CMakeFiles/visumainSub.dir/build
 .PHONY : visumainSub/fast
 
+#=============================================================================
+# Target rules for targets named cameraSub
+
+# Build rule for target.
+cameraSub: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 cameraSub
+.PHONY : cameraSub
+
+# fast build rule for target.
+cameraSub/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cameraSub.dir/build.make CMakeFiles/cameraSub.dir/build
+.PHONY : cameraSub/fast
+
+#=============================================================================
+# Target rules for targets named dummyCameraPub
+
+# Build rule for target.
+dummyCameraPub: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 dummyCameraPub
+.PHONY : dummyCameraPub
+
+# fast build rule for target.
+dummyCameraPub/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dummyCameraPub.dir/build.make CMakeFiles/dummyCameraPub.dir/build
+.PHONY : dummyCameraPub/fast
+
+cameraSub/cameraDynamicSub.o: cameraSub/cameraDynamicSub.cpp.o
+.PHONY : cameraSub/cameraDynamicSub.o
+
+# target to build an object file
+cameraSub/cameraDynamicSub.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cameraSub.dir/build.make CMakeFiles/cameraSub.dir/cameraSub/cameraDynamicSub.cpp.o
+.PHONY : cameraSub/cameraDynamicSub.cpp.o
+
+cameraSub/cameraDynamicSub.i: cameraSub/cameraDynamicSub.cpp.i
+.PHONY : cameraSub/cameraDynamicSub.i
+
+# target to preprocess a source file
+cameraSub/cameraDynamicSub.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cameraSub.dir/build.make CMakeFiles/cameraSub.dir/cameraSub/cameraDynamicSub.cpp.i
+.PHONY : cameraSub/cameraDynamicSub.cpp.i
+
+cameraSub/cameraDynamicSub.s: cameraSub/cameraDynamicSub.cpp.s
+.PHONY : cameraSub/cameraDynamicSub.s
+
+# target to generate assembly for a file
+cameraSub/cameraDynamicSub.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cameraSub.dir/build.make CMakeFiles/cameraSub.dir/cameraSub/cameraDynamicSub.cpp.s
+.PHONY : cameraSub/cameraDynamicSub.cpp.s
+
 dummyPub/dummyCameraAnglePub.o: dummyPub/dummyCameraAnglePub.cpp.o
 .PHONY : dummyPub/dummyCameraAnglePub.o
 
@@ -204,6 +254,30 @@ dummyPub/dummyCameraAnglePub.s: dummyPub/dummyCameraAnglePub.cpp.s
 dummyPub/dummyCameraAnglePub.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/dummyCameraAnglePub.dir/build.make CMakeFiles/dummyCameraAnglePub.dir/dummyPub/dummyCameraAnglePub.cpp.s
 .PHONY : dummyPub/dummyCameraAnglePub.cpp.s
+
+dummyPub/dummyCameraPub.o: dummyPub/dummyCameraPub.cpp.o
+.PHONY : dummyPub/dummyCameraPub.o
+
+# target to build an object file
+dummyPub/dummyCameraPub.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dummyCameraPub.dir/build.make CMakeFiles/dummyCameraPub.dir/dummyPub/dummyCameraPub.cpp.o
+.PHONY : dummyPub/dummyCameraPub.cpp.o
+
+dummyPub/dummyCameraPub.i: dummyPub/dummyCameraPub.cpp.i
+.PHONY : dummyPub/dummyCameraPub.i
+
+# target to preprocess a source file
+dummyPub/dummyCameraPub.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dummyCameraPub.dir/build.make CMakeFiles/dummyCameraPub.dir/dummyPub/dummyCameraPub.cpp.i
+.PHONY : dummyPub/dummyCameraPub.cpp.i
+
+dummyPub/dummyCameraPub.s: dummyPub/dummyCameraPub.cpp.s
+.PHONY : dummyPub/dummyCameraPub.s
+
+# target to generate assembly for a file
+dummyPub/dummyCameraPub.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dummyCameraPub.dir/build.make CMakeFiles/dummyCameraPub.dir/dummyPub/dummyCameraPub.cpp.s
+.PHONY : dummyPub/dummyCameraPub.cpp.s
 
 dummyPub/mainDynamicPub1.o: dummyPub/mainDynamicPub1.cpp.o
 .PHONY : dummyPub/mainDynamicPub1.o
@@ -262,6 +336,7 @@ dynddspub/ScanDynamicPub.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ScanDynamicPub2.dir/build.make CMakeFiles/ScanDynamicPub2.dir/dynddspub/ScanDynamicPub.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/dummyCameraAnglePub.dir/build.make CMakeFiles/dummyCameraAnglePub.dir/dynddspub/ScanDynamicPub.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/LidarDynamicPub.dir/build.make CMakeFiles/LidarDynamicPub.dir/dynddspub/ScanDynamicPub.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dummyCameraPub.dir/build.make CMakeFiles/dummyCameraPub.dir/dynddspub/ScanDynamicPub.cpp.o
 .PHONY : dynddspub/ScanDynamicPub.cpp.o
 
 dynddspub/ScanDynamicPub.i: dynddspub/ScanDynamicPub.cpp.i
@@ -273,6 +348,7 @@ dynddspub/ScanDynamicPub.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ScanDynamicPub2.dir/build.make CMakeFiles/ScanDynamicPub2.dir/dynddspub/ScanDynamicPub.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/dummyCameraAnglePub.dir/build.make CMakeFiles/dummyCameraAnglePub.dir/dynddspub/ScanDynamicPub.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/LidarDynamicPub.dir/build.make CMakeFiles/LidarDynamicPub.dir/dynddspub/ScanDynamicPub.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dummyCameraPub.dir/build.make CMakeFiles/dummyCameraPub.dir/dynddspub/ScanDynamicPub.cpp.i
 .PHONY : dynddspub/ScanDynamicPub.cpp.i
 
 dynddspub/ScanDynamicPub.s: dynddspub/ScanDynamicPub.cpp.s
@@ -284,6 +360,7 @@ dynddspub/ScanDynamicPub.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ScanDynamicPub2.dir/build.make CMakeFiles/ScanDynamicPub2.dir/dynddspub/ScanDynamicPub.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/dummyCameraAnglePub.dir/build.make CMakeFiles/dummyCameraAnglePub.dir/dynddspub/ScanDynamicPub.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/LidarDynamicPub.dir/build.make CMakeFiles/LidarDynamicPub.dir/dynddspub/ScanDynamicPub.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dummyCameraPub.dir/build.make CMakeFiles/dummyCameraPub.dir/dynddspub/ScanDynamicPub.cpp.s
 .PHONY : dynddspub/ScanDynamicPub.cpp.s
 
 dynddssub/ScanDynamicSub.o: dynddssub/ScanDynamicSub.cpp.o
@@ -292,6 +369,7 @@ dynddssub/ScanDynamicSub.o: dynddssub/ScanDynamicSub.cpp.o
 # target to build an object file
 dynddssub/ScanDynamicSub.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/visumainSub.dir/build.make CMakeFiles/visumainSub.dir/dynddssub/ScanDynamicSub.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cameraSub.dir/build.make CMakeFiles/cameraSub.dir/dynddssub/ScanDynamicSub.cpp.o
 .PHONY : dynddssub/ScanDynamicSub.cpp.o
 
 dynddssub/ScanDynamicSub.i: dynddssub/ScanDynamicSub.cpp.i
@@ -300,6 +378,7 @@ dynddssub/ScanDynamicSub.i: dynddssub/ScanDynamicSub.cpp.i
 # target to preprocess a source file
 dynddssub/ScanDynamicSub.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/visumainSub.dir/build.make CMakeFiles/visumainSub.dir/dynddssub/ScanDynamicSub.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cameraSub.dir/build.make CMakeFiles/cameraSub.dir/dynddssub/ScanDynamicSub.cpp.i
 .PHONY : dynddssub/ScanDynamicSub.cpp.i
 
 dynddssub/ScanDynamicSub.s: dynddssub/ScanDynamicSub.cpp.s
@@ -308,6 +387,7 @@ dynddssub/ScanDynamicSub.s: dynddssub/ScanDynamicSub.cpp.s
 # target to generate assembly for a file
 dynddssub/ScanDynamicSub.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/visumainSub.dir/build.make CMakeFiles/visumainSub.dir/dynddssub/ScanDynamicSub.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cameraSub.dir/build.make CMakeFiles/cameraSub.dir/dynddssub/ScanDynamicSub.cpp.s
 .PHONY : dynddssub/ScanDynamicSub.cpp.s
 
 lidarPub/LidarDynamicPub.o: lidarPub/LidarDynamicPub.cpp.o
@@ -393,11 +473,19 @@ help:
 	@echo "... LidarDynamicPub"
 	@echo "... ScanDynamicPub1"
 	@echo "... ScanDynamicPub2"
+	@echo "... cameraSub"
 	@echo "... dummyCameraAnglePub"
+	@echo "... dummyCameraPub"
 	@echo "... visumainSub"
+	@echo "... cameraSub/cameraDynamicSub.o"
+	@echo "... cameraSub/cameraDynamicSub.i"
+	@echo "... cameraSub/cameraDynamicSub.s"
 	@echo "... dummyPub/dummyCameraAnglePub.o"
 	@echo "... dummyPub/dummyCameraAnglePub.i"
 	@echo "... dummyPub/dummyCameraAnglePub.s"
+	@echo "... dummyPub/dummyCameraPub.o"
+	@echo "... dummyPub/dummyCameraPub.i"
+	@echo "... dummyPub/dummyCameraPub.s"
 	@echo "... dummyPub/mainDynamicPub1.o"
 	@echo "... dummyPub/mainDynamicPub1.i"
 	@echo "... dummyPub/mainDynamicPub1.s"

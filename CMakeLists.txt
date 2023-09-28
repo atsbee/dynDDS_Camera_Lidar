@@ -56,3 +56,13 @@ target_link_libraries(LidarDynamicPub fastrtps fastcdr sl_lidar_sdk)
 # Visualization subscriber
 add_executable(visumainSub visuSub/visuDynamicSub.cpp dynddssub/ScanDynamicSub.cpp visuSub/visualization.cpp)
 target_link_libraries(visumainSub fastrtps fastcdr sfml-graphics sfml-window sfml-system)
+
+# Camera subscriber
+find_package (OpenCV REQUIRED)
+include_directories (${OpenCV_INCLUDE_DIRS})
+add_executable(cameraSub cameraSub/cameraDynamicSub.cpp dynddssub/ScanDynamicSub.cpp)
+target_link_libraries(cameraSub fastrtps fastcdr ${OpenCV_LIBS})
+
+# dummy camera publisher
+add_executable(dummyCameraPub dummyPub/dummyCameraPub.cpp dynddspub/ScanDynamicPub.cpp)
+target_link_libraries(dummyCameraPub fastrtps fastcdr)

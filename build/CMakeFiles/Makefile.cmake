@@ -14,6 +14,10 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/usr/local/lib/cmake/fastcdr/fastcdr-config.cmake"
   "/usr/local/lib/cmake/fastcdr/fastcdr-static-targets-release.cmake"
   "/usr/local/lib/cmake/fastcdr/fastcdr-static-targets.cmake"
+  "/usr/local/lib/cmake/opencv4/OpenCVConfig-version.cmake"
+  "/usr/local/lib/cmake/opencv4/OpenCVConfig.cmake"
+  "/usr/local/lib/cmake/opencv4/OpenCVModules-release.cmake"
+  "/usr/local/lib/cmake/opencv4/OpenCVModules.cmake"
   "/usr/local/lib/foonathan_memory/cmake/foonathan_memory-config-noconfig.cmake"
   "/usr/local/lib/foonathan_memory/cmake/foonathan_memory-config-version.cmake"
   "/usr/local/lib/foonathan_memory/cmake/foonathan_memory-config.cmake"
@@ -67,4 +71,6 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/dummyCameraAnglePub.dir/DependInfo.cmake"
   "CMakeFiles/LidarDynamicPub.dir/DependInfo.cmake"
   "CMakeFiles/visumainSub.dir/DependInfo.cmake"
+  "CMakeFiles/cameraSub.dir/DependInfo.cmake"
+  "CMakeFiles/dummyCameraPub.dir/DependInfo.cmake"
   )

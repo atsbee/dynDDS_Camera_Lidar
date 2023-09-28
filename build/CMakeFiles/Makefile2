@@ -68,6 +68,8 @@ all: CMakeFiles/ScanDynamicPub2.dir/all
 all: CMakeFiles/dummyCameraAnglePub.dir/all
 all: CMakeFiles/LidarDynamicPub.dir/all
 all: CMakeFiles/visumainSub.dir/all
+all: CMakeFiles/cameraSub.dir/all
+all: CMakeFiles/dummyCameraPub.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -80,6 +82,8 @@ clean: CMakeFiles/ScanDynamicPub2.dir/clean
 clean: CMakeFiles/dummyCameraAnglePub.dir/clean
 clean: CMakeFiles/LidarDynamicPub.dir/clean
 clean: CMakeFiles/visumainSub.dir/clean
+clean: CMakeFiles/cameraSub.dir/clean
+clean: CMakeFiles/dummyCameraPub.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -141,7 +145,7 @@ CMakeFiles/ScanDynamicPub2.dir/clean:
 CMakeFiles/dummyCameraAnglePub.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/dummyCameraAnglePub.dir/build.make CMakeFiles/dummyCameraAnglePub.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/dummyCameraAnglePub.dir/build.make CMakeFiles/dummyCameraAnglePub.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jamesb/Desktop/gitter/dynDDS_Camera_Lidar/build/CMakeFiles --progress-num=10,11,12 "Built target dummyCameraAnglePub"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jamesb/Desktop/gitter/dynDDS_Camera_Lidar/build/CMakeFiles --progress-num=13,14,15 "Built target dummyCameraAnglePub"
 .PHONY : CMakeFiles/dummyCameraAnglePub.dir/all
 
 # Build rule for subdir invocation for target.
@@ -193,7 +197,7 @@ CMakeFiles/LidarDynamicPub.dir/clean:
 CMakeFiles/visumainSub.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/visumainSub.dir/build.make CMakeFiles/visumainSub.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/visumainSub.dir/build.make CMakeFiles/visumainSub.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jamesb/Desktop/gitter/dynDDS_Camera_Lidar/build/CMakeFiles --progress-num=13,14,15,16 "Built target visumainSub"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jamesb/Desktop/gitter/dynDDS_Camera_Lidar/build/CMakeFiles --progress-num=19,20,21,22 "Built target visumainSub"
 .PHONY : CMakeFiles/visumainSub.dir/all
 
 # Build rule for subdir invocation for target.
@@ -211,6 +215,58 @@ visumainSub: CMakeFiles/visumainSub.dir/rule
 CMakeFiles/visumainSub.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/visumainSub.dir/build.make CMakeFiles/visumainSub.dir/clean
 .PHONY : CMakeFiles/visumainSub.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/cameraSub.dir
+
+# All Build rule for target.
+CMakeFiles/cameraSub.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cameraSub.dir/build.make CMakeFiles/cameraSub.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cameraSub.dir/build.make CMakeFiles/cameraSub.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jamesb/Desktop/gitter/dynDDS_Camera_Lidar/build/CMakeFiles --progress-num=10,11,12 "Built target cameraSub"
+.PHONY : CMakeFiles/cameraSub.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/cameraSub.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jamesb/Desktop/gitter/dynDDS_Camera_Lidar/build/CMakeFiles 3
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/cameraSub.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jamesb/Desktop/gitter/dynDDS_Camera_Lidar/build/CMakeFiles 0
+.PHONY : CMakeFiles/cameraSub.dir/rule
+
+# Convenience name for target.
+cameraSub: CMakeFiles/cameraSub.dir/rule
+.PHONY : cameraSub
+
+# clean rule for target.
+CMakeFiles/cameraSub.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cameraSub.dir/build.make CMakeFiles/cameraSub.dir/clean
+.PHONY : CMakeFiles/cameraSub.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/dummyCameraPub.dir
+
+# All Build rule for target.
+CMakeFiles/dummyCameraPub.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dummyCameraPub.dir/build.make CMakeFiles/dummyCameraPub.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dummyCameraPub.dir/build.make CMakeFiles/dummyCameraPub.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jamesb/Desktop/gitter/dynDDS_Camera_Lidar/build/CMakeFiles --progress-num=16,17,18 "Built target dummyCameraPub"
+.PHONY : CMakeFiles/dummyCameraPub.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/dummyCameraPub.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jamesb/Desktop/gitter/dynDDS_Camera_Lidar/build/CMakeFiles 3
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/dummyCameraPub.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jamesb/Desktop/gitter/dynDDS_Camera_Lidar/build/CMakeFiles 0
+.PHONY : CMakeFiles/dummyCameraPub.dir/rule
+
+# Convenience name for target.
+dummyCameraPub: CMakeFiles/dummyCameraPub.dir/rule
+.PHONY : dummyCameraPub
+
+# clean rule for target.
+CMakeFiles/dummyCameraPub.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dummyCameraPub.dir/build.make CMakeFiles/dummyCameraPub.dir/clean
+.PHONY : CMakeFiles/dummyCameraPub.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

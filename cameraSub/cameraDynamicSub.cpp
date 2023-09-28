@@ -33,8 +33,6 @@ using namespace eprosima::fastdds::dds;
 
 using namespace cv;
 
-
-
 int main(int argc, char** argv)
 {
     std::cout << "Starting subscriber." << std::endl;
