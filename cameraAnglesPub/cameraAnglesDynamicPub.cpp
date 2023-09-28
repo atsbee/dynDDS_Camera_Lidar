@@ -14,7 +14,7 @@
 
 
 /**
- * @file FrameCameraPublisher.cpp
+ * @file cameraAnglesDynamicPub.cpp
  *
  */
 
@@ -47,12 +47,29 @@ using namespace eprosima::fastdds::dds;
 using namespace aditof;
 
 
+#define INDEX_MemID 0
+#define DEPTH67_ARRAY_MemID 1
+#define CAMERA_RANGE_MemID 2
+
 int main(int argc, char** argv)
 {
     std::cout << "Starting publisher." << std::endl;
 
+    const int frameHeight = static_cast<int>(480);
+    const int frameWidth = static_cast<int>(640);
+    const int pixelStart_HFOV = static_cast<int>(frameWidth * ((frameHeight/2)-1));//Pixelstart of center in the horizontal plane frame is 640x239
+    const int pixelStart_VFOV = static_cast<int>((frameWidth/2)-1);//Pixelstart of center in the vertical plane frame is 319 = (640/2)-1
+    const double angleOffset_HFOV = (87.0/static_cast<double>(frameWidth-1));//angle for each pixel in the horizontal plane
+    const double angleOffset_VFOV = (67.0)/static_cast<double>(frameHeight-1);//angle for each pixel in the vertical plane
+
     ScanDynamicPub *mypub;
     mypub = new ScanDynamicPub();
+    uint32_t samples_index = 0;
+    uint16_t depth_in_middle[frameHeight];
+    double angle_in_middle[frameHeight];
+    uint16_t depth_in_middle_67[67];
+    unsigned int count = 1;
+    unsigned int j = 0;
         
     Status status = Status::OK;
 
@@ -99,7 +116,7 @@ int main(int argc, char** argv)
     //For now, we will only use medium mode
     status = camera->setMode("medium");
         
-    mypub->init("pub2.xml", "FrameCamera", "FrameCameraTopic");
+    mypub->init("cameraAngle.xml", "FrameCameraAngle", "FrameCameraAngleTopic");
     
     camera->setControl("noise_reduction_threshold", std::to_string(smallSignalThreshold));
 
@@ -113,7 +130,7 @@ int main(int argc, char** argv)
         auto differenceTime1 = std::chrono::duration_cast<std::chrono::milliseconds>(endTime1 - startTime1).count();
         std::cout << "Time difference1: " << differenceTime1 << std::endl;
         
-        status = frame.getData(FrameDataType::IR, &data_ir);
+        //status = frame.getData(FrameDataType::IR, &data_ir);
         auto startTime2 = std::chrono::steady_clock::now();
         status = frame.getData(FrameDataType::DEPTH, &data_depth);
         auto endTime2 = std::chrono::steady_clock::now();;
@@ -126,20 +143,59 @@ int main(int argc, char** argv)
         auto differenceTime3 = std::chrono::duration_cast<std::chrono::milliseconds>(endTime3 - startTime3).count();
         std::cout << "Time difference3: " << differenceTime3 << std::endl;
         
-        auto startTime4 = std::chrono::steady_clock::now();
-        //std::memcpy(&mypub->adiFrame_.irFrame(), data_ir, sizeof(unsigned short) * fDetails.width * fDetails.height);
-        mypub->putData_uint16_array(data_ir, fDetails.width * fDetails.height, 1);
-        //std::memcpy(&mypub->adiFrame_.depthFrame(), data_depth, sizeof(unsigned short) * fDetails.width * fDetails.height);
-        mypub->putData_uint16_array(data_depth, fDetails.width * fDetails.height, 2);
-        auto endTime4 = std::chrono::steady_clock::now();;
-        auto differenceTime4 = std::chrono::duration_cast<std::chrono::milliseconds>(endTime4 - startTime4).count();
-        std::cout << "Time difference4: " << differenceTime4 << std::endl;
+        // auto startTime4 = std::chrono::steady_clock::now();
+        // //std::memcpy(&mypub->adiFrame_.irFrame(), data_ir, sizeof(unsigned short) * fDetails.width * fDetails.height);
+        // mypub->putData_uint16_array(data_ir, fDetails.width * fDetails.height, IR_ARRAY_MemID);
+        // //std::memcpy(&mypub->adiFrame_.depthFrame(), data_depth, sizeof(unsigned short) * fDetails.width * fDetails.height);
+        // mypub->putData_uint16_array(data_depth, fDetails.width * fDetails.height, DEPTH_ARRAY_MemID);
+        // auto endTime4 = std::chrono::steady_clock::now();;
+        // auto differenceTime4 = std::chrono::duration_cast<std::chrono::milliseconds>(endTime4 - startTime4).count();
+        // std::cout << "Time difference4: " << differenceTime4 << std::endl;
+
+        /*calculate central vertical frame (actually horizontal)*/
+        angle_in_middle[0] = 0;
+        depth_in_middle[0] = data_depth[pixelStart_VFOV];
+        for (unsigned int i = 1; i < frameHeight; ++i){
+            angle_in_middle[i] = angle_in_middle[i-1] + angleOffset_VFOV;
+            depth_in_middle[i] = data_depth[(frameWidth * i) + (pixelStart_VFOV)];
+            std::cout << "Angle information in VFOV: " << angle_in_middle[i] << " with index: " << i << " RECEIVED" << std::endl;
+        }
+        /*round to full degree*/
+
+        angle_in_middle[0] = 0;
+        depth_in_middle[0] = data_depth[pixelStart_VFOV];
+        
+        j = 0;
+        depth_in_middle_67[j] = depth_in_middle[0];
+        count = 1;//The of the pixel start must also be taken into account when calculating the mean value
+        
+        for (unsigned int i = 1; i < frameHeight; ++i){
+            angle_in_middle[i] = angle_in_middle[i-1] + angleOffset_VFOV;
+            depth_in_middle[i] = data_depth[(frameWidth * i) + (pixelStart_VFOV)];
+            if (static_cast<int>(angle_in_middle[i]) == j)
+            {
+                //Calculate the sum of the depth frame data with the same pre-decimal number of the angle
+                depth_in_middle_67[j] = depth_in_middle_67[j] + depth_in_middle[i];
+                ++count;
+            } else {
+                //calcule the mean value
+                std::cout << "Sum value: " << depth_in_middle_67[j] << " with count: " << count << std::endl;
+                depth_in_middle_67[j] = static_cast<int>(static_cast<double>(depth_in_middle_67[j]) / static_cast<double>(count));
+                std::cout << "Mean value depth frame: " << depth_in_middle_67[j] << " with index: " << j << " RECEIVED" << std::endl;
+                ++j;
+                count = 1;//reset the value count of the elements
+                depth_in_middle_67[j] = depth_in_middle[i];//Save the next depth frame in the nextrow of the array
+                std::cout << "Center frame: " << depth_in_middle_67[j] << " with count: " << count << " RECEIVED" << std::endl << std::endl;
+            }
+        }
+        mypub->putData_uint16_array(depth_in_middle_67, 67, DEPTH67_ARRAY_MemID);
+
         
         auto startTime5 = std::chrono::steady_clock::now();
         aditof::CameraDetails cameraDetails;
         camera->getDetails(cameraDetails);
         //mypub->adiFrame_.cameraRange() = cameraDetails.depthParameters.maxDepth;
-        mypub->putData_uint16_value(cameraDetails.depthParameters.maxDepth, 3);
+        mypub->putData_uint16_value(cameraDetails.depthParameters.maxDepth, CAMERA_RANGE_MemID);
         auto endTime5 = std::chrono::steady_clock::now();;
         auto differenceTime5 = std::chrono::duration_cast<std::chrono::milliseconds>(endTime5 - startTime5).count();
         std::cout << "Time difference5: " << differenceTime5 << std::endl;
@@ -153,7 +209,8 @@ int main(int argc, char** argv)
             
             auto startTime9 = std::chrono::steady_clock::now(); 
             //mypub->adiFrame_.index(mypub->adiFrame_.index() + 1);
-            mypub->putData_uint32_value(mypub->adiFrame_.index(), 0); //TODO: index is not working
+            samples_index++;
+            mypub->putData_uint32_value(samples_index, INDEX_MemID); //TODO: index is now being counted here
             auto endTime9 = std::chrono::steady_clock::now();;
             auto differenceTime9 = std::chrono::duration_cast<std::chrono::milliseconds>(endTime9 - startTime9).count();
             std::cout << "Time difference9: " << differenceTime9 << std::endl;

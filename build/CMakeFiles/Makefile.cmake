@@ -64,6 +64,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/ScanDynamicPub1.dir/DependInfo.cmake"
   "CMakeFiles/ScanDynamicPub2.dir/DependInfo.cmake"
+  "CMakeFiles/dummyCameraAnglePub.dir/DependInfo.cmake"
   "CMakeFiles/LidarDynamicPub.dir/DependInfo.cmake"
   "CMakeFiles/visumainSub.dir/DependInfo.cmake"
   )

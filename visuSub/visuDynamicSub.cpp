@@ -30,7 +30,7 @@ int main()
     std::uint16_t cscan[362]={0};
 
     //x offset and theta offset
-    double x_offset = 0.0;
+    double y_offset = 0.0;
     float theta_offset = 135.0;
 
     // current xys and istnulls
@@ -51,16 +51,15 @@ int main()
     //DDS Subscriber2
     ScanDynamicSub *mysub2;
     mysub2 = new ScanDynamicSub();
-    std::string mytopic2 = "Scanner2Topic";
+    std::string mytopic2 = "FrameCameraAngleTopic";
 	std::vector<std::any> anyArray2(3);
 
     // Scan data in polar coordinates
     std::uint16_t cscan2[362]={0};
 
     //x offset and theta offset
-    double x_offset2 = 0;
-    //TODO: y_offset2
-    float theta_offset2 = 0;    
+    double y_offset2 = -685;
+    float theta_offset2 = 180;    
 
     // current xys and istnulls
     std::vector<double> xs2, ys2;
@@ -70,7 +69,8 @@ int main()
     std::vector<double> oldxs2, oldys2;
     std::vector<bool> oldistnull2;
 
-    initilized2 = mysub2->init("pub2.xml", "SensorData2", "Scanner2Topic");
+    //initilized2 = mysub2->init("pub2.xml", "SensorData2", "Scanner2Topic");
+    initilized2 = mysub2->init("cameraAngle.xml", "FrameCameraAngle", "FrameCameraAngleTopic");
 
     // Initialize vectors to size 360(current) and 720(old)
     initializeData(xs2, ys2, istnull2, 360);
@@ -150,8 +150,8 @@ int main()
     sf::CircleShape circles[4];
     sf::CircleShape circles2[4];
     float cradius[4] = {1500.f, 1000.0f, 500.0f, 100.0f};
-    getCircles(circles, colors, cradius, x_offset);
-    getCircles(circles2, colors, cradius, x_offset2);
+    getCircles(circles, colors, cradius, y_offset);
+    getCircles(circles2, colors, cradius, y_offset2);
 
     sf::Text labels[3]; 
     getLables(labels, cradius, font);
@@ -218,7 +218,7 @@ int main()
         ys.clear();
         istnull.clear();
 
-        filterpolar2cartesian(cscan, xs, ys, istnull, &lightsignal, cradius, x_offset, theta_offset);
+        filterpolar2cartesian(cscan, xs, ys, istnull, &lightsignal, cradius, y_offset, theta_offset);
         getLidarPoints(lidarPoints, radius, xs, ys, istnull, sf::Color::Red);
         getOldPoints(oldlidarPoints, radius, oldxs, oldys, oldistnull,sf::Color(255,0,100,20), sf::Color(255,0,100,50));
         getAllPoints(allLidarPoints, xs, ys, oldxs, oldys, radius, sf::Color::Red);
@@ -227,7 +227,7 @@ int main()
 //sud2
         if (anyArray2[1].type() == typeid(uint16_t*)){
             uint16_t* buffer_cscan2 = std::any_cast<std::uint16_t*>(anyArray2[1]);
-            for (int i = 0; i < 120; i++){//TODO: 362
+            for (int i = 0; i < 67; i++){//TODO: 120
                 cscan2[i] = buffer_cscan2[i];
             }
         } 
@@ -263,7 +263,7 @@ int main()
         ys2.clear();
         istnull2.clear();
 
-        filterpolar2cartesian(cscan2, xs2, ys2, istnull2, &lightsignal2, cradius, x_offset2, theta_offset2);
+        filterpolar2cartesian(cscan2, xs2, ys2, istnull2, &lightsignal2, cradius, y_offset2, theta_offset2);
         getLidarPoints(lidarPoints2, radius, xs2, ys2, istnull2, sf::Color::Blue);
         getOldPoints(oldlidarPoints2, radius, oldxs2, oldys2, oldistnull2,sf::Color(0,100,255,20), sf::Color(0,100,255,50));
         getAllPoints(allLidarPoints2, xs2, ys2, oldxs2, oldys2, radius, sf::Color::Blue);

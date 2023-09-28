@@ -8,4 +8,4 @@
 
 
 ## Issues
-- "[DYN_TYPES Error] Error deleting DynamicData. It isn't registered in the factory -> Function delete_data" https://github.com/eProsima/Fast-DDS/issues/2970
+- "[DYN_TYPES Error] Error deleting DynamicData. It isn't registered in the factory -> Function delete_data" printed for every recieved array sample https://github.com/eProsima/Fast-DDS/issues/2970

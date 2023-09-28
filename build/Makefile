@@ -143,6 +143,19 @@ ScanDynamicPub2/fast:
 .PHONY : ScanDynamicPub2/fast
 
 #=============================================================================
+# Target rules for targets named dummyCameraAnglePub
+
+# Build rule for target.
+dummyCameraAnglePub: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 dummyCameraAnglePub
+.PHONY : dummyCameraAnglePub
+
+# fast build rule for target.
+dummyCameraAnglePub/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dummyCameraAnglePub.dir/build.make CMakeFiles/dummyCameraAnglePub.dir/build
+.PHONY : dummyCameraAnglePub/fast
+
+#=============================================================================
 # Target rules for targets named LidarDynamicPub
 
 # Build rule for target.
@@ -167,6 +180,30 @@ visumainSub: cmake_check_build_system
 visumainSub/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/visumainSub.dir/build.make CMakeFiles/visumainSub.dir/build
 .PHONY : visumainSub/fast
+
+dummyPub/dummyCameraAnglePub.o: dummyPub/dummyCameraAnglePub.cpp.o
+.PHONY : dummyPub/dummyCameraAnglePub.o
+
+# target to build an object file
+dummyPub/dummyCameraAnglePub.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dummyCameraAnglePub.dir/build.make CMakeFiles/dummyCameraAnglePub.dir/dummyPub/dummyCameraAnglePub.cpp.o
+.PHONY : dummyPub/dummyCameraAnglePub.cpp.o
+
+dummyPub/dummyCameraAnglePub.i: dummyPub/dummyCameraAnglePub.cpp.i
+.PHONY : dummyPub/dummyCameraAnglePub.i
+
+# target to preprocess a source file
+dummyPub/dummyCameraAnglePub.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dummyCameraAnglePub.dir/build.make CMakeFiles/dummyCameraAnglePub.dir/dummyPub/dummyCameraAnglePub.cpp.i
+.PHONY : dummyPub/dummyCameraAnglePub.cpp.i
+
+dummyPub/dummyCameraAnglePub.s: dummyPub/dummyCameraAnglePub.cpp.s
+.PHONY : dummyPub/dummyCameraAnglePub.s
+
+# target to generate assembly for a file
+dummyPub/dummyCameraAnglePub.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dummyCameraAnglePub.dir/build.make CMakeFiles/dummyCameraAnglePub.dir/dummyPub/dummyCameraAnglePub.cpp.s
+.PHONY : dummyPub/dummyCameraAnglePub.cpp.s
 
 dummyPub/mainDynamicPub1.o: dummyPub/mainDynamicPub1.cpp.o
 .PHONY : dummyPub/mainDynamicPub1.o
@@ -223,6 +260,7 @@ dynddspub/ScanDynamicPub.o: dynddspub/ScanDynamicPub.cpp.o
 dynddspub/ScanDynamicPub.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ScanDynamicPub1.dir/build.make CMakeFiles/ScanDynamicPub1.dir/dynddspub/ScanDynamicPub.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ScanDynamicPub2.dir/build.make CMakeFiles/ScanDynamicPub2.dir/dynddspub/ScanDynamicPub.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dummyCameraAnglePub.dir/build.make CMakeFiles/dummyCameraAnglePub.dir/dynddspub/ScanDynamicPub.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/LidarDynamicPub.dir/build.make CMakeFiles/LidarDynamicPub.dir/dynddspub/ScanDynamicPub.cpp.o
 .PHONY : dynddspub/ScanDynamicPub.cpp.o
 
@@ -233,6 +271,7 @@ dynddspub/ScanDynamicPub.i: dynddspub/ScanDynamicPub.cpp.i
 dynddspub/ScanDynamicPub.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ScanDynamicPub1.dir/build.make CMakeFiles/ScanDynamicPub1.dir/dynddspub/ScanDynamicPub.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ScanDynamicPub2.dir/build.make CMakeFiles/ScanDynamicPub2.dir/dynddspub/ScanDynamicPub.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dummyCameraAnglePub.dir/build.make CMakeFiles/dummyCameraAnglePub.dir/dynddspub/ScanDynamicPub.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/LidarDynamicPub.dir/build.make CMakeFiles/LidarDynamicPub.dir/dynddspub/ScanDynamicPub.cpp.i
 .PHONY : dynddspub/ScanDynamicPub.cpp.i
 
@@ -243,6 +282,7 @@ dynddspub/ScanDynamicPub.s: dynddspub/ScanDynamicPub.cpp.s
 dynddspub/ScanDynamicPub.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ScanDynamicPub1.dir/build.make CMakeFiles/ScanDynamicPub1.dir/dynddspub/ScanDynamicPub.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ScanDynamicPub2.dir/build.make CMakeFiles/ScanDynamicPub2.dir/dynddspub/ScanDynamicPub.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dummyCameraAnglePub.dir/build.make CMakeFiles/dummyCameraAnglePub.dir/dynddspub/ScanDynamicPub.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/LidarDynamicPub.dir/build.make CMakeFiles/LidarDynamicPub.dir/dynddspub/ScanDynamicPub.cpp.s
 .PHONY : dynddspub/ScanDynamicPub.cpp.s
 
@@ -353,7 +393,11 @@ help:
 	@echo "... LidarDynamicPub"
 	@echo "... ScanDynamicPub1"
 	@echo "... ScanDynamicPub2"
+	@echo "... dummyCameraAnglePub"
 	@echo "... visumainSub"
+	@echo "... dummyPub/dummyCameraAnglePub.o"
+	@echo "... dummyPub/dummyCameraAnglePub.i"
+	@echo "... dummyPub/dummyCameraAnglePub.s"
 	@echo "... dummyPub/mainDynamicPub1.o"
 	@echo "... dummyPub/mainDynamicPub1.i"
 	@echo "... dummyPub/mainDynamicPub1.s"

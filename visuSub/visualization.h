@@ -64,7 +64,7 @@ void getLidarImage(sf::Sprite& lidar, sf::Texture &lidarTexture, const int radiu
 
 void getRoboImage(sf::Sprite& robo, sf::Texture &roboTexture, const int radius);
 
-void getCircles(sf::CircleShape *circles, sf::Color *colors, float *cradius, float x_offset);
+void getCircles(sf::CircleShape *circles, sf::Color *colors, float *cradius, float y_offset);
 
 void getLables(sf::Text *labels, float *cradius, const sf::Font& font);
 
@@ -82,7 +82,7 @@ void getOldPoints(sf::CircleShape *oldlidarPoints, int radius, std::vector<doubl
 void polar2cartesian(std::uint16_t *cscan, std::vector<double>& xs, std::vector<double>& ys, std::vector<bool>& istnull, int *lightsignal, float *cradius);
 
 void filterpolar2cartesian(std::uint16_t *cscan, std::vector<double>& xs, std::vector<double>& ys, std::vector<bool>& istnull, int *lightsignal, 
-                            float *cradius, double x_offset, int theta_offset);
+                            float *cradius, double y_offset, int theta_offset);
 
 void plotValues(sf::RenderWindow& window, sf::CircleShape *circles, sf::CircleShape *circles2, sf::Text *labels, sf::CircleShape *lidarPoints, sf::CircleShape *lidarPoints2, sf::VertexArray grid, 
                         sf::RectangleShape *poles, sf::Sprite& logo, sf::Sprite& lidarImage, sf::Sprite& roboImage, sf::CircleShape &billoLight, 

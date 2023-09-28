@@ -159,14 +159,14 @@ void getbilloLight(sf::CircleShape *billoLight, const int radius){
     billoLight[3].setFillColor(sf::Color::Black);
 }
 
-void getCircles(sf::CircleShape *circles, sf::Color *colors, float *cradius, float x_offset){
+void getCircles(sf::CircleShape *circles, sf::Color *colors, float *cradius, float y_offset){
     sf::Color red = sf::Color(255, 0, 0, 120); //red
     sf::Color yellow = sf::Color(255, 255, 0, 120); //yellow
     for(int i = 0; i < 4; i++){
         circles[i].setRadius(cradius[i]);
         circles[i].setFillColor(colors[i]);
         circles[i].setOrigin(cradius[i], cradius[i]);
-        circles[i].setPosition(x_offset, 0.f);
+        circles[i].setPosition(0.f, y_offset);
     }
     circles[0].setOutlineThickness(5.0f);
     circles[0].setOutlineColor(colors[0]);
@@ -326,7 +326,7 @@ void polar2cartesian(std::uint16_t *cscan, std::vector<double>& xs, std::vector<
 }
 
 void filterpolar2cartesian(std::uint16_t *cscan, std::vector<double>& xs, std::vector<double>& ys, std::vector<bool>& istnull, int *lightsignal, 
-                            float *cradius, double x_offset, int theta_offset)
+                            float *cradius, double y_offset, int theta_offset)
 {
     double x, y, rho, theta;
     int gelb = 0, rot = 0;//counter for consecutive rho values in the yellow and red range
@@ -341,7 +341,7 @@ void filterpolar2cartesian(std::uint16_t *cscan, std::vector<double>& xs, std::v
 
     for (int radian = 0; radian < 360; ++radian)
     {    
-        theta = (((359-radian) + 135) % 360)* M_PI / 180.0; //wrong way around and 45° offset +90°
+        theta = (((359-radian) + theta_offset) % 360)* M_PI / 180.0; //wrong way around and 45° offset +90°
         //if both neighbouring points are 0 and the current point is bigger than 0 -> set rho to 0
         //or if the current point is in the blindspot between 0°(0) and 270°(4.712389) -> set rho to 0     //gegen den uhrzeigersinn 100° und 350°
         //if((cscan[(radian+359) % 360] == 0 && cscan[(radian+1) % 360] == 0 && cscan[radian] > 0) || (theta < 0 || theta > 4.712389)){ 
@@ -375,8 +375,8 @@ void filterpolar2cartesian(std::uint16_t *cscan, std::vector<double>& xs, std::v
         //polar to cartesian
         x = rho * std::cos(theta);
         y = rho * std::sin(theta);
-        xs.push_back(x+x_offset);
-        ys.push_back(y);
+        xs.push_back(x);
+        ys.push_back(y+y_offset);
         //if rho is 0 -> set istnull to true to check for null values later (easier)
         if(rho == 0){
             istnull.push_back(true);

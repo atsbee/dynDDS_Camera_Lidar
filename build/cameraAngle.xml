@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<types xmlns="http://www.eprosima.com/XMLSchemas/fastRTPS_Profiles" >
+    <type>
+        <struct name="FrameCameraAngle">
+	    <member name="index" type="uint32"/>
+	    <member name="depthFrame67" type="uint16" arrayDimensions="1,67"/>
+        <member name="cameraRange" type="uint16"/>
+        </struct>
+    </type>
+</types>

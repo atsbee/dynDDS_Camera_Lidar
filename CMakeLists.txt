@@ -46,6 +46,9 @@ target_link_libraries(ScanDynamicPub1 fastrtps fastcdr)
 add_executable(ScanDynamicPub2 dummyPub/mainDynamicPub2.cpp dynddspub/ScanDynamicPub.cpp)
 target_link_libraries(ScanDynamicPub2 fastrtps fastcdr)
 
+add_executable(dummyCameraAnglePub dummyPub/dummyCameraAnglePub.cpp dynddspub/ScanDynamicPub.cpp)
+target_link_libraries(dummyCameraAnglePub fastrtps fastcdr)
+
 # Lidar publisher
 add_executable(LidarDynamicPub lidarPub/LidarDynamicPub.cpp dynddspub/ScanDynamicPub.cpp)
 target_link_libraries(LidarDynamicPub fastrtps fastcdr sl_lidar_sdk)
