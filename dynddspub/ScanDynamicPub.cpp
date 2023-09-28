@@ -73,7 +73,9 @@ bool ScanDynamicPub::init(std::string xml_path, std::string dyntype_name, std::s
 
     //REGISTER THE TYPE
     m_type.get()->auto_fill_type_information(false);
-    m_type.get()->auto_fill_type_object(true);
+    // m_type.get()->auto_fill_type_object(true);
+    m_type.get()->auto_fill_type_object(false); //TODO: check if this is needed
+
 
     m_type.register_type(mp_participant);
 
