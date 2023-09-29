@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/user/Desktop/dynDDS_Camera_Lidar/dummyPub/mainDynamicPub1.cpp
+../dynddspub/ScanDynamicPub.h
+/home/user/Desktop/dynDDS_Camera_Lidar/dynddspub/ScanDynamicPub.h
+fastrtps/log/Log.h
+-
+
+/home/user/Desktop/dynDDS_Camera_Lidar/dynddspub/ScanDynamicPub.cpp
+ScanDynamicPub.h
+/home/user/Desktop/dynDDS_Camera_Lidar/dynddspub/ScanDynamicPub.h
+fastrtps/attributes/ParticipantAttributes.h
+-
+fastrtps/attributes/PublisherAttributes.h
+-
+fastdds/dds/publisher/Publisher.hpp
+-
+fastdds/dds/publisher/qos/PublisherQos.hpp
+-
+fastdds/dds/publisher/DataWriter.hpp
+-
+fastdds/dds/publisher/qos/DataWriterQos.hpp
+-
+fastdds/dds/domain/DomainParticipantFactory.hpp
+-
+fastrtps/types/DynamicDataFactory.h
+-
+fastrtps/xmlparser/XMLProfileManager.h
+-
+thread
+-
+
+/home/user/Desktop/dynDDS_Camera_Lidar/dynddspub/ScanDynamicPub.h
+fastdds/dds/publisher/DataWriterListener.hpp
+-
+fastdds/dds/domain/DomainParticipant.hpp
+-
+

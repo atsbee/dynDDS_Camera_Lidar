@@ -21,6 +21,21 @@ if(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
     endif()
 endif()
 
+# Check C++17
+include(CheckCXXCompilerFlag)
+if(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
+    check_cxx_compiler_flag(-std=c++17 SUPPORTS_CXX17)
+    check_cxx_compiler_flag(-std=c++17 SUPPORTS_CXX17)
+    if(NOT SUPPORTS_CXX17)
+        message(FATAL_ERROR "Compiler doesn't support C++17")
+    endif()
+endif()
+#set c++17 as standard
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+
+
 message(STATUS "Configuring ScanDynamic example...")
 
 
@@ -57,11 +72,11 @@ target_link_libraries(LidarDynamicPub fastrtps fastcdr sl_lidar_sdk)
 add_executable(visumainSub visuSub/visuDynamicSub.cpp dynddssub/ScanDynamicSub.cpp visuSub/visualization.cpp)
 target_link_libraries(visumainSub fastrtps fastcdr sfml-graphics sfml-window sfml-system)
 
-# Camera subscriber
-find_package (OpenCV REQUIRED)
-include_directories (${OpenCV_INCLUDE_DIRS})
-add_executable(cameraSub cameraSub/cameraDynamicSub.cpp dynddssub/ScanDynamicSub.cpp)
-target_link_libraries(cameraSub fastrtps fastcdr ${OpenCV_LIBS})
+# # Camera subscriber
+# find_package (OpenCV REQUIRED)
+# include_directories (${OpenCV_INCLUDE_DIRS})
+# add_executable(cameraSub cameraSub/cameraDynamicSub.cpp dynddssub/ScanDynamicSub.cpp)
+# target_link_libraries(cameraSub fastrtps fastcdr ${OpenCV_LIBS})
 
 # dummy camera publisher
 add_executable(dummyCameraPub dummyPub/dummyCameraPub.cpp dynddspub/ScanDynamicPub.cpp)

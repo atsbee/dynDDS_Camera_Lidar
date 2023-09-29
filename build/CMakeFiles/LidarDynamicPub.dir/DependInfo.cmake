@@ -1,15 +1,25 @@
-
-# Consider dependencies only in project.
-set(CMAKE_DEPENDS_IN_PROJECT_ONLY OFF)
-
 # The set of languages for which implicit dependencies are needed:
 set(CMAKE_DEPENDS_LANGUAGES
+  "CXX"
+  )
+# The set of files for implicit dependencies of each language:
+set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/user/Desktop/dynDDS_Camera_Lidar/dynddspub/ScanDynamicPub.cpp" "/home/user/Desktop/dynDDS_Camera_Lidar/build/CMakeFiles/LidarDynamicPub.dir/dynddspub/ScanDynamicPub.cpp.o"
+  "/home/user/Desktop/dynDDS_Camera_Lidar/lidarPub/LidarDynamicPub.cpp" "/home/user/Desktop/dynDDS_Camera_Lidar/build/CMakeFiles/LidarDynamicPub.dir/lidarPub/LidarDynamicPub.cpp.o"
+  )
+set(CMAKE_CXX_COMPILER_ID "GNU")
+
+# Preprocessor definitions for this target.
+set(CMAKE_TARGET_DEFINITIONS_CXX
+  "FOONATHAN_MEMORY=1"
+  "FOONATHAN_MEMORY_VERSION_MAJOR=0"
+  "FOONATHAN_MEMORY_VERSION_MINOR=7"
+  "FOONATHAN_MEMORY_VERSION_PATCH=1"
   )
 
-# The set of dependency files which are needed:
-set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/jamesb/Desktop/gitter/dynDDS_Camera_Lidar/dynddspub/ScanDynamicPub.cpp" "CMakeFiles/LidarDynamicPub.dir/dynddspub/ScanDynamicPub.cpp.o" "gcc" "CMakeFiles/LidarDynamicPub.dir/dynddspub/ScanDynamicPub.cpp.o.d"
-  "/home/jamesb/Desktop/gitter/dynDDS_Camera_Lidar/lidarPub/LidarDynamicPub.cpp" "CMakeFiles/LidarDynamicPub.dir/lidarPub/LidarDynamicPub.cpp.o" "gcc" "CMakeFiles/LidarDynamicPub.dir/lidarPub/LidarDynamicPub.cpp.o.d"
+# The include file search paths:
+set(CMAKE_CXX_TARGET_INCLUDE_PATH
+  "/usr/local/include/foonathan_memory"
   )
 
 # Targets to which this target links.
