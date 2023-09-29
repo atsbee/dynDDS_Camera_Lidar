@@ -43,8 +43,7 @@ int main(int argc, char** argv)
     mysub = new ScanDynamicSub();
     std::string mytopic = "FrameCameraTopic";
     std::vector<std::any> anyArray(4);
-    uint16_t irData[640*480];
-    uint16_t depthData[640*480];
+
     const int frameHeight = static_cast<int>(480);
     const int frameWidth = static_cast<int>(640);
 
@@ -56,20 +55,21 @@ int main(int argc, char** argv)
     while(1)
     {       
        
-        if (mysub->m_listener.n_samples==1)// ->listener_.newFrameFlag_ == 1) //TODO: check if n_samples is the right variable unten nicht vergessen
+        if (mysub->m_listener.n_samples)// ->listener_.newFrameFlag_ == 1) //TODO: check if n_samples is the right variable unten nicht vergessen
         {
             cv::namedWindow("Depth Image", cv::WINDOW_AUTOSIZE);
             cv::namedWindow("Infrared Image", cv::WINDOW_AUTOSIZE);
             while (cv::waitKey(1) != 27 && getWindowProperty("Depth Image", cv::WND_PROP_AUTOSIZE) >= 0
                     && getWindowProperty("Infrared Image", cv::WND_PROP_AUTOSIZE) >= 0)
             {                 
+                printf("here0\n");
                 //Convert the frame into depth mat                        
                 cv::Mat depth_mat;
                 depth_mat = cv::Mat(frameHeight, frameWidth, CV_16UC1, std::any_cast<std::uint16_t*>(anyArray[2])); //&mysub->listener_.adiFrame_.depthFrame());
-                
+                printf("here1\n");
                 //Calculate the distance factor 
                 double distance_scale = 255.0 / std::any_cast<std::uint16_t>(anyArray[3]); //mysub->listener_.adiFrame_.cameraRange();
-                
+                printf("here2\n");
                 //Convert from raw values to values that opencv can understand 
                 depth_mat.convertTo(depth_mat, CV_8U, distance_scale);
                 
@@ -79,7 +79,7 @@ int main(int argc, char** argv)
                 //Convert the frame into infrared mat
                 cv::Mat ir_mat;
                 ir_mat = cv::Mat(frameHeight, frameWidth, CV_16UC1, std::any_cast<std::uint16_t*>(anyArray[1]));//&mysub->listener_.adiFrame_.irFrame());
-                                    
+                printf("here3\n");
                 //Display the depth and the infrared image
                 imshow("Depth Image", depth_mat);
                 imshow("Infrared Image", ir_mat);
