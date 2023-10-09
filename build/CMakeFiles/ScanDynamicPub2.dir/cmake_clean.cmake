@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/ScanDynamicPub2.dir/dummyPub/mainDynamicPub2.cpp.o"
+  "CMakeFiles/ScanDynamicPub2.dir/dummyPub/mainDynamicPub2.cpp.o.d"
   "CMakeFiles/ScanDynamicPub2.dir/dynddspub/ScanDynamicPub.cpp.o"
+  "CMakeFiles/ScanDynamicPub2.dir/dynddspub/ScanDynamicPub.cpp.o.d"
   "ScanDynamicPub2"
   "ScanDynamicPub2.pdb"
 )

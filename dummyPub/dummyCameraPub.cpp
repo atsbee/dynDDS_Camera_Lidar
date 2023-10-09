@@ -38,10 +38,10 @@ using namespace eprosima::fastdds::dds;
 
 void fill_array(uint16_t *array, int incrementInterval, uint16_t startVal , int size)
 {
-    uint16_t value = startVal*10;
+    uint16_t value = startVal;
     for (int i = 0; i < size; ++i) {
         if (i % incrementInterval == 0){
-            value = value + 1;
+            value = value + 30;
         }   
         array[i] = value;
     }
@@ -91,7 +91,8 @@ int main(int argc, char** argv)
     {        
         auto startTime = std::chrono::steady_clock::now();
         
-        fill_array(data_ir, 640, static_cast<uint16_t>(samples_index%100),307200);  
+        fill_array(data_ir, 640, static_cast<uint16_t>(samples_index%200),307200);  
+        fill_array(data_depth, 640, static_cast<uint16_t>(samples_index%200),307200);
         auto startTime4 = std::chrono::steady_clock::now();
         //std::memcpy(&mypub->adiFrame_.irFrame(), data_ir, sizeof(unsigned short) * fDetails.width * fDetails.height);
         mypub->putData_uint16_array(data_ir, frameWidth * frameHeight, IR_ARRAY_MemID);
@@ -99,22 +100,22 @@ int main(int argc, char** argv)
         mypub->putData_uint16_array(data_depth, frameWidth * frameHeight , DEPTH_ARRAY_MemID);
         auto endTime4 = std::chrono::steady_clock::now();;
         auto differenceTime4 = std::chrono::duration_cast<std::chrono::milliseconds>(endTime4 - startTime4).count();
-        std::cout << "Time difference4: " << differenceTime4 << std::endl;
+        //std::cout << "Time difference4: " << differenceTime4 << std::endl;
         
         auto startTime5 = std::chrono::steady_clock::now();
     
         //mypub->adiFrame_.cameraRange() = cameraDetails.depthParameters.maxDepth;
-        mypub->putData_uint16_value( 67 , CAMERA_RANGE_MemID);
+        mypub->putData_uint16_value( static_cast<uint16_t>(67) , CAMERA_RANGE_MemID);
         auto endTime5 = std::chrono::steady_clock::now();;
         auto differenceTime5 = std::chrono::duration_cast<std::chrono::milliseconds>(endTime5 - startTime5).count();
-        std::cout << "Time difference5: " << differenceTime5 << std::endl;
+        //std::cout << "Time difference5: " << differenceTime5 << std::endl;
         
         auto startTime6 = std::chrono::steady_clock::now();                     
         if(mypub->publish())
         { 
             auto endTime6 = std::chrono::steady_clock::now();;
             auto differenceTime6 = std::chrono::duration_cast<std::chrono::milliseconds>(endTime6 - startTime6).count();
-            std::cout << "Time difference6: " << differenceTime6 << std::endl;
+            //std::cout << "Time difference6: " << differenceTime6 << std::endl;
             
             auto startTime9 = std::chrono::steady_clock::now(); 
             //mypub->adiFrame_.index(mypub->adiFrame_.index() + 1);
@@ -122,14 +123,15 @@ int main(int argc, char** argv)
             mypub->putData_uint32_value(samples_index, INDEX_MemID); //TODO: index is now being counted here
             auto endTime9 = std::chrono::steady_clock::now();;
             auto differenceTime9 = std::chrono::duration_cast<std::chrono::milliseconds>(endTime9 - startTime9).count();
-            std::cout << "Time difference9: " << differenceTime9 << std::endl;
+            //std::cout << "Time difference9: " << differenceTime9 << std::endl;
         }
         
         
-        auto endTime = std::chrono::steady_clock::now();;
+        auto endTime = std::chrono::steady_clock::now();
         auto differenceTime = std::chrono::duration_cast<std::chrono::milliseconds>(endTime - startTime).count();
-        std::cout << "Time difference gesamt: " << differenceTime << std::endl << std::endl;
+        //std::cout << "Time difference gesamt: " << differenceTime << std::endl << std::endl;
 
+        std::this_thread::sleep_for(std::chrono::milliseconds(800));
     }
 
     delete mypub;

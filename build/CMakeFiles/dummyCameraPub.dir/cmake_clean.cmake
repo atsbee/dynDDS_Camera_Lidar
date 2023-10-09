@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/dummyCameraPub.dir/dummyPub/dummyCameraPub.cpp.o"
+  "CMakeFiles/dummyCameraPub.dir/dummyPub/dummyCameraPub.cpp.o.d"
   "CMakeFiles/dummyCameraPub.dir/dynddspub/ScanDynamicPub.cpp.o"
+  "CMakeFiles/dummyCameraPub.dir/dynddspub/ScanDynamicPub.cpp.o.d"
   "dummyCameraPub"
   "dummyCameraPub.pdb"
 )

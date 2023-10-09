@@ -28,6 +28,7 @@
 #include <fastrtps/types/DynamicDataHelper.hpp>
 #include <fastrtps/types/DynamicDataFactory.h>
 #include <mutex>
+#include <memory>
 
 #include <fastrtps/xmlparser/XMLProfileManager.h>
 
@@ -42,62 +43,100 @@ void HandleArrayCase(eprosima::fastrtps::types::DynamicData* data, uint32_t id, 
 
 template <>
 void HandleArrayCase<uint16_t>(eprosima::fastrtps::types::DynamicData* data, uint32_t id, std::vector<std::any*>& anyPointers) {
+    if (anyPointers[id] && anyPointers[id]->has_value() && anyPointers[id]->type() == typeid(uint16_t*)) {
+        // Deallocate previous data (if any)
+        delete[] std::any_cast<uint16_t*>(*anyPointers[id]);
+        printf("deleted\n");
+    }
+
     // Specialized handling for uint16_t arrays
     uint16_t* copyArray = new uint16_t[data->get_item_count()];
     for (int i = 0; i < data->get_item_count(); i++) {
         copyArray[i] = data->get_uint16_value(i);
     }
-    *anyPointers[id] = copyArray;
+
+    *anyPointers[id] = copyArray;  // how to move ownership to std::any?
+    printf("uint16_t array\n");
 }
 
 template <>
 void HandleArrayCase<int16_t>(eprosima::fastrtps::types::DynamicData* data, uint32_t id, std::vector<std::any*>& anyPointers) {
+    if(anyPointers[id] && anyPointers[id]->has_value() && anyPointers[id]->type() == typeid(int16_t*)) {
+        // Deallocate previous data (if any)
+        delete[] std::any_cast<int16_t*>(*anyPointers[id]);
+    }
+
     // Specialized handling for int16_t arrays
     int16_t* copyArray = new int16_t[data->get_item_count()];
     for (int i = 0; i < data->get_item_count(); i++) {
         copyArray[i] = data->get_int16_value(i);
     }
     *anyPointers[id] = copyArray;
+    printf("int16_t array\n");
 }
 
 template <>
 void HandleArrayCase<uint32_t>(eprosima::fastrtps::types::DynamicData* data, uint32_t id, std::vector<std::any*>& anyPointers) {
+    if(anyPointers[id] && anyPointers[id]->has_value() && anyPointers[id]->type() == typeid(uint32_t*)) {
+        // Deallocate previous data (if any)
+        delete[] std::any_cast<uint32_t*>(*anyPointers[id]);
+    }
+
     // Specialized handling for uint32_t arrays
     uint32_t* copyArray = new uint32_t[data->get_item_count()];
     for (int i = 0; i < data->get_item_count(); i++) {
         copyArray[i] = data->get_uint32_value(i);
     }
     *anyPointers[id] = copyArray;
+    printf("uint32_t array\n");
 }
 
 template <>
 void HandleArrayCase<int32_t>(eprosima::fastrtps::types::DynamicData* data, uint32_t id, std::vector<std::any*>& anyPointers) {
+    if(anyPointers[id] && anyPointers[id]->has_value() && anyPointers[id]->type() == typeid(int32_t*)) {
+        // Deallocate previous data (if any)
+        delete[] std::any_cast<int32_t*>(*anyPointers[id]);
+    }
+
     // Specialized handling for int32_t arrays
     int32_t* copyArray = new int32_t[data->get_item_count()];
     for (int i = 0; i < data->get_item_count(); i++) {
         copyArray[i] = data->get_int32_value(i);
     }
     *anyPointers[id] = copyArray;
+    printf("int32_t array\n");
 }
 
 template <>
 void HandleArrayCase<float>(eprosima::fastrtps::types::DynamicData* data, uint32_t id, std::vector<std::any*>& anyPointers) {
+    if(anyPointers[id] && anyPointers[id]->has_value() && anyPointers[id]->type() == typeid(float*)) {
+        // Deallocate previous data (if any)
+        delete[] std::any_cast<float*>(*anyPointers[id]);
+    }
+
     // Specialized handling for float arrays
     float* copyArray = new float[data->get_item_count()];
     for (int i = 0; i < data->get_item_count(); i++) {
         copyArray[i] = data->get_float32_value(i);
     }
     *anyPointers[id] = copyArray;
+    printf("float array\n");
 }
 
 template <>
 void HandleArrayCase<double>(eprosima::fastrtps::types::DynamicData* data, uint32_t id, std::vector<std::any*>& anyPointers) {
+    if(anyPointers[id] && anyPointers[id]->has_value() && anyPointers[id]->type() == typeid(double*)) {
+        // Deallocate previous data (if any)
+        delete[] std::any_cast<double*>(*anyPointers[id]);
+    }
+
     // Specialized handling for double arrays
     double* copyArray = new double[data->get_item_count()];
     for (int i = 0; i < data->get_item_count(); i++) {
         copyArray[i] = data->get_float64_value(i);
     }
     *anyPointers[id] = copyArray;
+    printf("double array\n");
 }
 
 
@@ -292,12 +331,14 @@ void ScanDynamicSub::SubListener::on_data_available(DataReader* reader)
                     {
                     case eprosima::fastrtps::types::TK_UINT16:
                         *this->anyPointers[memberDesc->get_id()] = data->get_uint16_value(memberDesc->get_id());
+                        printf("uint16_t\n");
                         break;
                     case eprosima::fastrtps::types::TK_INT16:
                         *this->anyPointers[memberDesc->get_id()] = data->get_int16_value(memberDesc->get_id());
                         break;
                     case eprosima::fastrtps::types::TK_UINT32:
                         *this->anyPointers[memberDesc->get_id()] = data->get_uint32_value(memberDesc->get_id());
+                        printf("uint32_t\n");
                         break;
                     case eprosima::fastrtps::types::TK_INT32:
                         *this->anyPointers[memberDesc->get_id()] = data->get_int32_value(memberDesc->get_id());

@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/LidarDynamicPub.dir/dynddspub/ScanDynamicPub.cpp.o"
+  "CMakeFiles/LidarDynamicPub.dir/dynddspub/ScanDynamicPub.cpp.o.d"
   "CMakeFiles/LidarDynamicPub.dir/lidarPub/LidarDynamicPub.cpp.o"
+  "CMakeFiles/LidarDynamicPub.dir/lidarPub/LidarDynamicPub.cpp.o.d"
   "LidarDynamicPub"
   "LidarDynamicPub.pdb"
 )

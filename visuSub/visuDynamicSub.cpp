@@ -1,3 +1,9 @@
+
+/**
+ * @file visuDynamicSub.cpp
+ *
+ */
+
 #include <iostream>
 #include <cmath>
 #include <bits/stdc++.h>
@@ -41,7 +47,7 @@ int main()
     std::vector<double> oldxs, oldys;
     std::vector<bool> oldistnull;
 
-    initilized1 = mysub->init("pub1.xml", "SensorData", "Scanner1Topic");
+    initilized1 = mysub->init("pub1.xml", "SensorData", mytopic);
 
     // Initialize vectors to size 360(current) and 720(old)
     initializeData(xs, ys, istnull, 360);

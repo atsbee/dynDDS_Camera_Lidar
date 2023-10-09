@@ -1,25 +1,15 @@
+
+# Consider dependencies only in project.
+set(CMAKE_DEPENDS_IN_PROJECT_ONLY OFF)
+
 # The set of languages for which implicit dependencies are needed:
 set(CMAKE_DEPENDS_LANGUAGES
-  "CXX"
-  )
-# The set of files for implicit dependencies of each language:
-set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/user/Desktop/dynDDS_Camera_Lidar/dummyPub/dummyCameraAnglePub.cpp" "/home/user/Desktop/dynDDS_Camera_Lidar/build/CMakeFiles/dummyCameraAnglePub.dir/dummyPub/dummyCameraAnglePub.cpp.o"
-  "/home/user/Desktop/dynDDS_Camera_Lidar/dynddspub/ScanDynamicPub.cpp" "/home/user/Desktop/dynDDS_Camera_Lidar/build/CMakeFiles/dummyCameraAnglePub.dir/dynddspub/ScanDynamicPub.cpp.o"
-  )
-set(CMAKE_CXX_COMPILER_ID "GNU")
-
-# Preprocessor definitions for this target.
-set(CMAKE_TARGET_DEFINITIONS_CXX
-  "FOONATHAN_MEMORY=1"
-  "FOONATHAN_MEMORY_VERSION_MAJOR=0"
-  "FOONATHAN_MEMORY_VERSION_MINOR=7"
-  "FOONATHAN_MEMORY_VERSION_PATCH=1"
   )
 
-# The include file search paths:
-set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "/usr/local/include/foonathan_memory"
+# The set of dependency files which are needed:
+set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/jamesb/Desktop/gitter/dynDDS_Camera_Lidar/dummyPub/dummyCameraAnglePub.cpp" "CMakeFiles/dummyCameraAnglePub.dir/dummyPub/dummyCameraAnglePub.cpp.o" "gcc" "CMakeFiles/dummyCameraAnglePub.dir/dummyPub/dummyCameraAnglePub.cpp.o.d"
+  "/home/jamesb/Desktop/gitter/dynDDS_Camera_Lidar/dynddspub/ScanDynamicPub.cpp" "CMakeFiles/dummyCameraAnglePub.dir/dynddspub/ScanDynamicPub.cpp.o" "gcc" "CMakeFiles/dummyCameraAnglePub.dir/dynddspub/ScanDynamicPub.cpp.o.d"
   )
 
 # Targets to which this target links.
