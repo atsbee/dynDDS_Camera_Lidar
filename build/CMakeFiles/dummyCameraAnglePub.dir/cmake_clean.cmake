@@ -3,6 +3,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/dummyCameraAnglePub.dir/dummyPub/dummyCameraAnglePub.cpp.o.d"
   "CMakeFiles/dummyCameraAnglePub.dir/dynddspub/ScanDynamicPub.cpp.o"
   "CMakeFiles/dummyCameraAnglePub.dir/dynddspub/ScanDynamicPub.cpp.o.d"
+  "CMakeFiles/dummyCameraAnglePub.dir/dynddspub/putData.cpp.o"
+  "CMakeFiles/dummyCameraAnglePub.dir/dynddspub/putData.cpp.o.d"
   "dummyCameraAnglePub"
   "dummyCameraAnglePub.pdb"
 )

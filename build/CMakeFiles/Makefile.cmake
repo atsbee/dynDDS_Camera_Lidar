@@ -25,8 +25,8 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/usr/local/share/fastrtps/cmake/fast-discovery-server-targets.cmake"
   "/usr/local/share/fastrtps/cmake/fastrtps-config-version.cmake"
   "/usr/local/share/fastrtps/cmake/fastrtps-config.cmake"
-  "/usr/local/share/fastrtps/cmake/fastrtps-dynamic-targets-release.cmake"
-  "/usr/local/share/fastrtps/cmake/fastrtps-dynamic-targets.cmake"
+  "/usr/local/share/fastrtps/cmake/fastrtps-static-targets-release.cmake"
+  "/usr/local/share/fastrtps/cmake/fastrtps-static-targets.cmake"
   "/usr/local/share/fastrtps/cmake/optionparser-targets.cmake"
   "/usr/share/cmake-3.22/Modules/CMakeCXXInformation.cmake"
   "/usr/share/cmake-3.22/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake"
@@ -66,11 +66,14 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/ScanDynamicPub1.dir/DependInfo.cmake"
-  "CMakeFiles/ScanDynamicPub2.dir/DependInfo.cmake"
+  "CMakeFiles/dummyLidarPub.dir/DependInfo.cmake"
   "CMakeFiles/dummyCameraAnglePub.dir/DependInfo.cmake"
   "CMakeFiles/LidarDynamicPub.dir/DependInfo.cmake"
   "CMakeFiles/visumainSub.dir/DependInfo.cmake"
   "CMakeFiles/cameraSub.dir/DependInfo.cmake"
   "CMakeFiles/dummyCameraPub.dir/DependInfo.cmake"
+  "CMakeFiles/ramonePub.dir/DependInfo.cmake"
+  "CMakeFiles/ramoneSub.dir/DependInfo.cmake"
+  "CMakeFiles/ramtenPub.dir/DependInfo.cmake"
+  "CMakeFiles/ramtenSub.dir/DependInfo.cmake"
   )

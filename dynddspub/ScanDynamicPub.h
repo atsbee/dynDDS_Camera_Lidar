@@ -23,6 +23,20 @@
 #include <fastdds/dds/publisher/DataWriterListener.hpp>
 #include <fastdds/dds/domain/DomainParticipant.hpp>
 
+#include <fastrtps/attributes/ParticipantAttributes.h>
+#include <fastrtps/attributes/PublisherAttributes.h>
+#include <fastdds/dds/publisher/Publisher.hpp>
+#include <fastdds/dds/publisher/qos/PublisherQos.hpp>
+#include <fastdds/dds/publisher/DataWriter.hpp>
+#include <fastdds/dds/publisher/qos/DataWriterQos.hpp>
+#include <fastdds/dds/domain/DomainParticipantFactory.hpp>
+
+#include <fastrtps/types/DynamicDataFactory.h>
+
+#include <fastrtps/xmlparser/XMLProfileManager.h>
+
+#include <thread>
+
 class ScanDynamicPub
 {
 public:
@@ -37,14 +51,42 @@ public:
     //!Publish a sample
     bool publish();
 
-    //put data into the dynamic data
+    //put data in arrays
     void putData_uint16_array(uint16_t *array, int size, int member_id);
 
-    //put data into the dynamic data
+    void putData_uint32_array(uint32_t *array, int size, int member_id);
+
+    void putData_int32_array(int32_t *array, int size, int member_id);
+
+    void putData_int64_array(int64_t *array, int size, int member_id);
+
+    void putData_float32_array(float *array, int size, int member_id);
+
+    void putData_float64_array(double *array, int size, int member_id);
+
+
+    //put data into values
     void putData_uint16_value(uint16_t value, int member_id);
 
-    //put data into the dynamic data
     void putData_uint32_value(uint32_t value, int member_id);
+
+    void putData_int32_value(int32_t value, int member_id);
+
+    void putData_int64_value(int64_t value, int member_id);
+
+    void putData_float32_value(float value, int member_id);
+
+    void putData_float64_value(double value, int member_id);
+
+    void putData_char8_value(char value, int member_id);
+
+    void putData_char16_value(wchar_t value, int member_id);
+
+    void putData_string_value(std::string value, int member_id);
+
+    void putData_wstring_value(std::wstring value, int member_id);
+
+    void putData_bool_value(bool value, int member_id);
 
 
 private:

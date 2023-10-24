@@ -11,15 +11,15 @@ if(NOT fastrtps_FOUND)
     find_package(fastrtps REQUIRED)
 endif()
 
-# Check C++11
-include(CheckCXXCompilerFlag)
-if(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
-    check_cxx_compiler_flag(-std=c++11 SUPPORTS_CXX11)
-    check_cxx_compiler_flag(-std=c++11 SUPPORTS_CXX11)
-    if(NOT SUPPORTS_CXX11)
-        message(FATAL_ERROR "Compiler doesn't support C++11")
-    endif()
-endif()
+# # Check C++11
+# include(CheckCXXCompilerFlag)
+# if(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
+#     check_cxx_compiler_flag(-std=c++11 SUPPORTS_CXX11)
+#     check_cxx_compiler_flag(-std=c++11 SUPPORTS_CXX11)
+#     if(NOT SUPPORTS_CXX11)
+#         message(FATAL_ERROR "Compiler doesn't support C++11")
+#     endif()
+# endif()
 
 # Check C++17
 include(CheckCXXCompilerFlag)
@@ -34,50 +34,56 @@ endif()
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+# Use GLOB to collect source files
+file(GLOB PUB_SRC
+    "dynddspub/ScanDynamicPub.cpp"
+    "dynddspub/putData.cpp"
+)
 
+file(GLOB SUB_SRC
+    "dynddssub/ScanDynamicSub.cpp"
+)
 
 message(STATUS "Configuring ScanDynamic example...")
 
+# Dummy Lidar publisher
+add_executable(dummyLidarPub dummyPub/dummyLidarPub.cpp ${PUB_SRC})
+target_link_libraries(dummyLidarPub fastrtps fastcdr)
 
-
-# # dummy publisher
-# add_executable(ScanDynamicPub1 ../dummmyPub/mainDynamicPub1.cpp dynddspub/ScanDynamicPub.cpp)
-# target_link_libraries(ScanDynamicPub1 fastrtps fastcdr)
-# add_executable(ScanDynamicPub2 mainDynamicPub2.cpp ../dynddspub/ScanDynamicPub.cpp)
-# target_link_libraries(ScanDynamicPub2 fastrtps fastcdr)
-
-# # Lidar publisher
-# add_executable(LidarDynamicPub ../lidarPub/LidarDynamicPub.cpp ../dynddspub/ScanDynamicPub.cpp)
-# target_link_libraries(LidarDynamicPub fastrtps fastcdr sl_lidar_sdk)
-
-# # visualization subscriber
-# add_executable(visumainSub visuDynamicSub.cpp ScanDynamicSub.cpp visualization.cpp)
-# target_link_libraries(visumainSub fastrtps fastcdr sfml-graphics sfml-window sfml-system)
-
-# Dummy publisher
-add_executable(ScanDynamicPub1 dummyPub/mainDynamicPub1.cpp dynddspub/ScanDynamicPub.cpp)
-target_link_libraries(ScanDynamicPub1 fastrtps fastcdr)
-
-add_executable(ScanDynamicPub2 dummyPub/mainDynamicPub2.cpp dynddspub/ScanDynamicPub.cpp)
-target_link_libraries(ScanDynamicPub2 fastrtps fastcdr)
-
-add_executable(dummyCameraAnglePub dummyPub/dummyCameraAnglePub.cpp dynddspub/ScanDynamicPub.cpp)
+# Dummy Camera angles publisher
+add_executable(dummyCameraAnglePub dummyPub/dummyCameraAnglePub.cpp ${PUB_SRC})
 target_link_libraries(dummyCameraAnglePub fastrtps fastcdr)
 
 # Lidar publisher
-add_executable(LidarDynamicPub lidarPub/LidarDynamicPub.cpp dynddspub/ScanDynamicPub.cpp)
+add_executable(LidarDynamicPub lidarPub/LidarDynamicPub.cpp ${PUB_SRC})
 target_link_libraries(LidarDynamicPub fastrtps fastcdr sl_lidar_sdk)
 
 # Visualization subscriber
-add_executable(visumainSub visuSub/visuDynamicSub.cpp dynddssub/ScanDynamicSub.cpp visuSub/visualization.cpp)
+add_executable(visumainSub visuSub/visuDynamicSub.cpp ${SUB_SRC} visuSub/visualization.cpp)
 target_link_libraries(visumainSub fastrtps fastcdr sfml-graphics sfml-window sfml-system)
 
 # Camera subscriber
 find_package (OpenCV REQUIRED)
 include_directories (${OpenCV_INCLUDE_DIRS})
-add_executable(cameraSub cameraSub/cameraDynamicSub.cpp dynddssub/ScanDynamicSub.cpp)
+add_executable(cameraSub cameraSub/cameraDynamicSub.cpp ${SUB_SRC})
 target_link_libraries(cameraSub fastrtps fastcdr ${OpenCV_LIBS})
 
 # dummy camera publisher
-add_executable(dummyCameraPub dummyPub/dummyCameraPub.cpp dynddspub/ScanDynamicPub.cpp)
+add_executable(dummyCameraPub dummyPub/dummyCameraPub.cpp ${PUB_SRC})
 target_link_libraries(dummyCameraPub fastrtps fastcdr)
+
+# ramtest pub
+add_executable(ramonePub ramtestPub/ramonePub.cpp ${PUB_SRC})
+target_link_libraries(ramonePub fastrtps fastcdr)
+
+# ramtest sub
+add_executable(ramoneSub ramtestPub/ramoneSub.cpp ${SUB_SRC})
+target_link_libraries(ramoneSub fastrtps fastcdr)
+
+# ramtest pub
+add_executable(ramtenPub ramtestPub/ramtenPub.cpp ${PUB_SRC})
+target_link_libraries(ramtenPub fastrtps fastcdr)
+
+# ramtest sub
+add_executable(ramtenSub ramtestPub/ramtenSub.cpp ${SUB_SRC})
+target_link_libraries(ramtenSub fastrtps fastcdr)

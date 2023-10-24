@@ -42,7 +42,7 @@ int main(int argc, char** argv)
 	//ScanDynamicPub* mypub = new ScanDynamicPub();
     ScanDynamicPub *mypub;
     mypub = new ScanDynamicPub();
-    initialized = mypub->init("pub1.xml", "SensorData", "Scanner1Topic");
+    initialized = mypub->init("lidar.xml", "SensorData", "Scanner1Topic");
 
     ///  Create a communication channel instance
     IChannel* _channel;

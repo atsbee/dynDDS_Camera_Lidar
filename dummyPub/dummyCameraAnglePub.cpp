@@ -14,7 +14,7 @@
 
 
 /**
- * @file cameraAnglesDynamicPub.cpp
+ * @file dummyCameraAnglesPub.cpp
  *
  */
 

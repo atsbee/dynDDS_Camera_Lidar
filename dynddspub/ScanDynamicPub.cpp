@@ -54,14 +54,6 @@ bool ScanDynamicPub::init(std::string xml_path, std::string dyntype_name, std::s
     TypeSupport m_type(new eprosima::fastrtps::types::DynamicPubSubType(dyn_type));
     m_ScanDyn = eprosima::fastrtps::types::DynamicDataFactory::get_instance()->create_data(dyn_type);
 
-    // m_ScanDyn->set_uint16_value(362, 0); //set scan size
-
-    // eprosima::fastrtps::types::DynamicData* array = m_ScanDyn->loan_value(1);
-    // //array->clear_array_data(0);
-    // m_ScanDyn->return_loaned_value(array); //set scan array
-
-    // m_ScanDyn->set_uint16_value(7, 2); //set scan id to 7
-
     DomainParticipantQos pqos;
     pqos.name("Participant_pub");
     mp_participant = DomainParticipantFactory::get_instance()->create_participant(0, pqos);
@@ -150,37 +142,8 @@ bool ScanDynamicPub::publish()
 {
     if (m_listener.firstConnected || m_listener.n_matched > 0) 
     {
-        // m_ScanDyn->set_uint16_value(362, 0);
-
-        // eprosima::fastrtps::types::DynamicData* array = m_ScanDyn->loan_value(1);
-        // for(unsigned int i=0; i<362; i++){
-        //     array->set_uint16_value(distance[i], array->get_array_index({0, i}));
-        // }
-        // m_ScanDyn->return_loaned_value(array); 
-
-        //m_ScanDyn->set_uint16_value(7, 2);
-
         writer_->write(m_ScanDyn.get());
         return true;
     }
     return false;
-}
-
-void ScanDynamicPub::putData_uint16_array(uint16_t *distance, int size, int member_id)
-{
-    eprosima::fastrtps::types::DynamicData* array = m_ScanDyn->loan_value(member_id);
-    for(unsigned int i=0; i<size; i++){
-        array->set_uint16_value(distance[i], array->get_array_index({0, i}));
-    }
-    m_ScanDyn->return_loaned_value(array); 
-}
-
-void ScanDynamicPub::putData_uint16_value(uint16_t value, int member_id)
-{
-    m_ScanDyn->set_uint16_value(value, member_id);
-}
-
-void ScanDynamicPub::putData_uint32_value(uint32_t value, int member_id)
-{
-    m_ScanDyn->set_uint32_value(value, member_id);
 }

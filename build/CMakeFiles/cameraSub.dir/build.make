@@ -108,7 +108,7 @@ cameraSub_EXTERNAL_OBJECTS =
 cameraSub: CMakeFiles/cameraSub.dir/cameraSub/cameraDynamicSub.cpp.o
 cameraSub: CMakeFiles/cameraSub.dir/dynddssub/ScanDynamicSub.cpp.o
 cameraSub: CMakeFiles/cameraSub.dir/build.make
-cameraSub: /usr/local/lib/libfastrtps.so.2.10.0
+cameraSub: /usr/local/lib/libfastrtps.a
 cameraSub: /usr/local/lib/libfastcdr.a
 cameraSub: /usr/local/lib/libopencv_gapi.so.4.8.0
 cameraSub: /usr/local/lib/libopencv_stitching.so.4.8.0

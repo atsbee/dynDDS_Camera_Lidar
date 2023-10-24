@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<types xmlns="http://www.eprosima.com/XMLSchemas/fastRTPS_Profiles" >
+    <type>
+        <struct name="One">
+            <member name="array" type="float32" arrayDimensions="1,10"/>
+        </struct>
+    </type>
+</types>

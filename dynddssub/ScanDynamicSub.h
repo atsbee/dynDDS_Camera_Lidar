@@ -1,3 +1,4 @@
+
 /**
  * @file ScanDynamicSub.h
  *
@@ -39,12 +40,8 @@ public:
     //!RUN the subscriber
     void run(std::any *anyArray, std::size_t anySize, std::string topic_name);
 
-    //! Initialize all required entities for data transmission
-    void initialize_entities(std::string topic_name);
-
 
 private:
-
     eprosima::fastdds::dds::DomainParticipant* mp_participant;
 
     eprosima::fastdds::dds::Subscriber* mp_subscriber;

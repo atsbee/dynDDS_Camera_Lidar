@@ -14,7 +14,7 @@
 
 
 /**
- * @file cameraDynamicPub.cpp
+ * @file dummyCameraPub.cpp
  *
  */
 
@@ -27,10 +27,8 @@
 #include <fastdds/dds/publisher/DataWriter.hpp>
 #include <fastdds/dds/publisher/DataWriterListener.hpp>
 
-
 #include <iostream>
 #include <string>
-
 #include <ctime>
 #include <chrono>
 
@@ -38,7 +36,7 @@ using namespace eprosima::fastdds::dds;
 
 void fill_array(uint16_t *array, int incrementInterval, uint16_t startVal , int size)
 {
-    uint16_t value = startVal;
+    uint16_t value = startVal*100;
     for (int i = 0; i < size; ++i) {
         if (i % incrementInterval == 0){
             value = value + 30;
@@ -71,19 +69,6 @@ int main(int argc, char** argv)
     
     uint16_t data_depth[307200]={0};
     uint16_t data_ir[307200]={0};
-    /*
-    //Place the camera in a specific mode, that the user choosed
-    std::cout << "Please enter the mode in which you want to operate the camera (near or medium)";
-    std::cin >> selectedMode;
-    
-    if(selectedMode == "near" || selectedMode == "medium")
-    { 
-        std::cout << "The selected mode is: " << selectedMode << std::endl;
-        status = camera->setMode(selectedMode);
-    } else {  
-        std::cout << "Incorrect mode. The default mode near is selected instead" << std::endl;
-         status = camera->setMode("near");
-    }*/
 
     mypub->init("camera.xml", "FrameCamera", "FrameCameraTopic");
 
@@ -93,45 +78,21 @@ int main(int argc, char** argv)
         
         fill_array(data_ir, 640, static_cast<uint16_t>(samples_index%200),307200);  
         fill_array(data_depth, 640, static_cast<uint16_t>(samples_index%200),307200);
-        auto startTime4 = std::chrono::steady_clock::now();
-        //std::memcpy(&mypub->adiFrame_.irFrame(), data_ir, sizeof(unsigned short) * fDetails.width * fDetails.height);
+
         mypub->putData_uint16_array(data_ir, frameWidth * frameHeight, IR_ARRAY_MemID);
-        //std::memcpy(&mypub->adiFrame_.depthFrame(), data_depth, sizeof(unsigned short) * fDetails.width * fDetails.height);
         mypub->putData_uint16_array(data_depth, frameWidth * frameHeight , DEPTH_ARRAY_MemID);
-        auto endTime4 = std::chrono::steady_clock::now();;
-        auto differenceTime4 = std::chrono::duration_cast<std::chrono::milliseconds>(endTime4 - startTime4).count();
-        //std::cout << "Time difference4: " << differenceTime4 << std::endl;
-        
-        auto startTime5 = std::chrono::steady_clock::now();
-    
-        //mypub->adiFrame_.cameraRange() = cameraDetails.depthParameters.maxDepth;
-        mypub->putData_uint16_value( static_cast<uint16_t>(67) , CAMERA_RANGE_MemID);
-        auto endTime5 = std::chrono::steady_clock::now();;
-        auto differenceTime5 = std::chrono::duration_cast<std::chrono::milliseconds>(endTime5 - startTime5).count();
-        //std::cout << "Time difference5: " << differenceTime5 << std::endl;
-        
-        auto startTime6 = std::chrono::steady_clock::now();                     
+
+        mypub->putData_uint16_value( static_cast<uint16_t>(12000) , CAMERA_RANGE_MemID);
+                   
         if(mypub->publish())
         { 
-            auto endTime6 = std::chrono::steady_clock::now();;
-            auto differenceTime6 = std::chrono::duration_cast<std::chrono::milliseconds>(endTime6 - startTime6).count();
-            //std::cout << "Time difference6: " << differenceTime6 << std::endl;
-            
-            auto startTime9 = std::chrono::steady_clock::now(); 
-            //mypub->adiFrame_.index(mypub->adiFrame_.index() + 1);
             samples_index++;
-            mypub->putData_uint32_value(samples_index, INDEX_MemID); //TODO: index is now being counted here
-            auto endTime9 = std::chrono::steady_clock::now();;
-            auto differenceTime9 = std::chrono::duration_cast<std::chrono::milliseconds>(endTime9 - startTime9).count();
-            //std::cout << "Time difference9: " << differenceTime9 << std::endl;
+            mypub->putData_uint32_value(samples_index, INDEX_MemID); 
         }
-        
         
         auto endTime = std::chrono::steady_clock::now();
         auto differenceTime = std::chrono::duration_cast<std::chrono::milliseconds>(endTime - startTime).count();
-        //std::cout << "Time difference gesamt: " << differenceTime << std::endl << std::endl;
-
-        std::this_thread::sleep_for(std::chrono::milliseconds(800));
+        std::cout << "Time difference gesamt: " << differenceTime << std::endl << std::endl;
     }
 
     delete mypub;

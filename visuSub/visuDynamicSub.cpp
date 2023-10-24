@@ -47,7 +47,7 @@ int main()
     std::vector<double> oldxs, oldys;
     std::vector<bool> oldistnull;
 
-    initilized1 = mysub->init("pub1.xml", "SensorData", mytopic);
+    initilized1 = mysub->init("lidar.xml", "SensorData", mytopic);
 
     // Initialize vectors to size 360(current) and 720(old)
     initializeData(xs, ys, istnull, 360);
@@ -75,7 +75,6 @@ int main()
     std::vector<double> oldxs2, oldys2;
     std::vector<bool> oldistnull2;
 
-    //initilized2 = mysub2->init("pub2.xml", "SensorData2", "Scanner2Topic");
     initilized2 = mysub2->init("cameraAngle.xml", "FrameCameraAngle", "FrameCameraAngleTopic");
 
     // Initialize vectors to size 360(current) and 720(old)

@@ -142,15 +142,6 @@ int main(int argc, char** argv)
         auto endTime3 = std::chrono::steady_clock::now();;
         auto differenceTime3 = std::chrono::duration_cast<std::chrono::milliseconds>(endTime3 - startTime3).count();
         std::cout << "Time difference3: " << differenceTime3 << std::endl;
-        
-        // auto startTime4 = std::chrono::steady_clock::now();
-        // //std::memcpy(&mypub->adiFrame_.irFrame(), data_ir, sizeof(unsigned short) * fDetails.width * fDetails.height);
-        // mypub->putData_uint16_array(data_ir, fDetails.width * fDetails.height, IR_ARRAY_MemID);
-        // //std::memcpy(&mypub->adiFrame_.depthFrame(), data_depth, sizeof(unsigned short) * fDetails.width * fDetails.height);
-        // mypub->putData_uint16_array(data_depth, fDetails.width * fDetails.height, DEPTH_ARRAY_MemID);
-        // auto endTime4 = std::chrono::steady_clock::now();;
-        // auto differenceTime4 = std::chrono::duration_cast<std::chrono::milliseconds>(endTime4 - startTime4).count();
-        // std::cout << "Time difference4: " << differenceTime4 << std::endl;
 
         /*calculate central vertical frame (actually horizontal)*/
         angle_in_middle[0] = 0;
@@ -194,7 +185,6 @@ int main(int argc, char** argv)
         auto startTime5 = std::chrono::steady_clock::now();
         aditof::CameraDetails cameraDetails;
         camera->getDetails(cameraDetails);
-        //mypub->adiFrame_.cameraRange() = cameraDetails.depthParameters.maxDepth;
         mypub->putData_uint16_value(cameraDetails.depthParameters.maxDepth, CAMERA_RANGE_MemID);
         auto endTime5 = std::chrono::steady_clock::now();;
         auto differenceTime5 = std::chrono::duration_cast<std::chrono::milliseconds>(endTime5 - startTime5).count();

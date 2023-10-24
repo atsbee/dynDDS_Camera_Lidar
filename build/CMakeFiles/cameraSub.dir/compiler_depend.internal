@@ -371,30 +371,23 @@ CMakeFiles/cameraSub.dir/cameraSub/cameraDynamicSub.cpp.o
  /usr/local/include/fastdds/rtps/transport/TransportInterface.h
  /usr/local/include/fastdds/rtps/common/LocatorSelector.hpp
  /usr/local/include/fastdds/rtps/common/LocatorSelectorEntry.hpp
+ /usr/local/include/fastdds/rtps/transport/SenderResource.h
  /usr/local/include/fastdds/rtps/transport/TransportDescriptorInterface.h
  /usr/local/include/fastdds/rtps/transport/TransportReceiverInterface.h
- /usr/local/include/fastdds/rtps/transport/SenderResource.h
  /usr/local/include/fastdds/rtps/flowcontrol/FlowControllerConsts.hpp
  /usr/local/include/fastrtps/types/TypeObject.h
- /usr/local/include/fastrtps/types/TypesBase.h
- /usr/local/include/fastrtps/types/TypeObjectHashId.h
- /usr/local/include/fastrtps/types/TypeIdentifier.h
- /usr/local/include/fastrtps/types/TypeIdentifierTypes.h
  /usr/local/include/fastrtps/types/AnnotationParameterValue.h
+ /usr/local/include/fastrtps/types/TypeIdentifier.h
+ /usr/local/include/fastrtps/types/TypesBase.h
+ /usr/local/include/fastrtps/types/TypeIdentifierTypes.h
+ /usr/local/include/fastrtps/types/TypeObjectHashId.h
  /usr/local/include/fastrtps/utils/string_convert.hpp
  /usr/local/include/fastdds/dds/builtin/topic/TopicBuiltinTopicData.hpp
  /usr/local/include/fastdds/dds/core/status/StatusMask.hpp
  /usr/local/include/fastdds/dds/core/Entity.hpp
+ /usr/local/include/fastdds/dds/common/InstanceHandle.hpp
  /usr/local/include/fastdds/dds/core/condition/StatusCondition.hpp
  /usr/local/include/fastdds/dds/core/condition/Condition.hpp
- /usr/local/include/fastdds/dds/topic/TypeSupport.hpp
- /usr/local/include/fastdds/dds/topic/TopicDataType.hpp
- /usr/local/include/fastrtps/utils/md5.h
- /usr/local/include/fastrtps/fastrtps_dll.h
- /usr/local/include/fastdds/dds/common/InstanceHandle.hpp
- /usr/local/include/fastrtps/types/DynamicPubSubType.h
- /usr/local/include/fastrtps/types/DynamicTypePtr.h
- /usr/local/include/fastrtps/types/DynamicDataPtr.h
  /usr/local/include/fastdds/dds/domain/qos/DomainParticipantQos.hpp
  /usr/local/include/fastdds/dds/topic/ContentFilteredTopic.hpp
  /usr/local/include/fastdds/dds/topic/TopicDescription.hpp
@@ -410,6 +403,15 @@ CMakeFiles/cameraSub.dir/cameraSub/cameraDynamicSub.cpp.o
  /usr/local/include/fastdds/dds/topic/IContentFilter.hpp
  /usr/local/include/fastrtps/types/TypeDescriptor.h
  /usr/local/include/fastrtps/types/AnnotationDescriptor.h
+ /usr/local/include/fastrtps/types/DynamicTypePtr.h
+ /usr/local/include/fastdds/dds/topic/TopicDataType.hpp
+ /usr/local/include/fastdds/rtps/common/CdrSerialization.hpp
+ /usr/local/include/fastcdr/CdrEncoding.hpp
+ /usr/local/include/fastrtps/utils/md5.h
+ /usr/local/include/fastrtps/fastrtps_dll.h
+ /usr/local/include/fastdds/dds/topic/TypeSupport.hpp
+ /usr/local/include/fastrtps/types/DynamicPubSubType.h
+ /usr/local/include/fastrtps/types/DynamicDataPtr.h
  /usr/local/include/fastdds/dds/topic/TopicListener.hpp
  /usr/local/include/fastdds/dds/domain/DomainParticipantListener.hpp
  /usr/local/include/fastdds/rtps/participant/ParticipantDiscoveryInfo.h
@@ -459,6 +461,58 @@ CMakeFiles/cameraSub.dir/cameraSub/cameraDynamicSub.cpp.o
  /usr/include/c++/11/bits/std_mutex.h
  /usr/include/c++/11/bits/unique_lock.h
  /usr/include/c++/11/any
+ /usr/local/include/opencv4/opencv2/highgui/highgui.hpp
+ /usr/local/include/opencv4/opencv2/highgui.hpp
+ /usr/local/include/opencv4/opencv2/core.hpp
+ /usr/local/include/opencv4/opencv2/core/cvdef.h
+ /usr/local/include/opencv4/opencv2/core/version.hpp
+ /usr/local/include/opencv4/opencv2/core/hal/interface.h
+ /usr/local/include/opencv4/opencv2/core/cv_cpu_dispatch.h
+ /usr/lib/gcc/x86_64-linux-gnu/11/include/emmintrin.h
+ /usr/lib/gcc/x86_64-linux-gnu/11/include/xmmintrin.h
+ /usr/lib/gcc/x86_64-linux-gnu/11/include/mmintrin.h
+ /usr/lib/gcc/x86_64-linux-gnu/11/include/mm_malloc.h
+ /usr/local/include/opencv4/opencv2/core/base.hpp
+ /usr/local/include/opencv4/opencv2/opencv_modules.hpp
+ /usr/include/c++/11/climits
+ /usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h
+ /usr/lib/gcc/x86_64-linux-gnu/11/include/syslimits.h
+ /usr/include/limits.h
+ /usr/include/x86_64-linux-gnu/bits/posix1_lim.h
+ /usr/include/x86_64-linux-gnu/bits/local_lim.h
+ /usr/include/linux/limits.h
+ /usr/include/x86_64-linux-gnu/bits/posix2_lim.h
+ /usr/include/x86_64-linux-gnu/bits/xopen_lim.h
+ /usr/include/x86_64-linux-gnu/bits/uio_lim.h
+ /usr/local/include/opencv4/opencv2/core/cvstd.hpp
+ /usr/local/include/opencv4/opencv2/core/cvstd_wrapper.hpp
+ /usr/local/include/opencv4/opencv2/core/neon_utils.hpp
+ /usr/local/include/opencv4/opencv2/core/vsx_utils.hpp
+ /usr/local/include/opencv4/opencv2/core/check.hpp
+ /usr/local/include/opencv4/opencv2/core/traits.hpp
+ /usr/local/include/opencv4/opencv2/core/matx.hpp
+ /usr/local/include/opencv4/opencv2/core/saturate.hpp
+ /usr/local/include/opencv4/opencv2/core/fast_math.hpp
+ /usr/local/include/opencv4/opencv2/core/types.hpp
+ /usr/include/c++/11/cfloat
+ /usr/lib/gcc/x86_64-linux-gnu/11/include/float.h
+ /usr/local/include/opencv4/opencv2/core/mat.hpp
+ /usr/local/include/opencv4/opencv2/core/bufferpool.hpp
+ /usr/local/include/opencv4/opencv2/core/mat.inl.hpp
+ /usr/local/include/opencv4/opencv2/core/persistence.hpp
+ /usr/local/include/opencv4/opencv2/core/operations.hpp
+ /usr/local/include/opencv4/opencv2/core/cvstd.inl.hpp
+ /usr/include/c++/11/complex
+ /usr/local/include/opencv4/opencv2/core/utility.hpp
+ /usr/include/c++/11/mutex
+ /usr/local/include/opencv4/opencv2/core/optim.hpp
+ /usr/local/include/opencv4/opencv2/core/ovx.hpp
+ /usr/local/include/opencv4/opencv2/core/cvdef.h
+ /usr/local/include/opencv4/opencv2/imgcodecs.hpp
+ /usr/local/include/opencv4/opencv2/videoio.hpp
+ /usr/local/include/opencv4/opencv2/imgproc/imgproc.hpp
+ /usr/local/include/opencv4/opencv2/imgproc.hpp
+ /usr/local/include/opencv4/opencv2/imgproc/segmentation.hpp
 
 CMakeFiles/cameraSub.dir/dynddssub/ScanDynamicSub.cpp.o
  /home/jamesb/Desktop/gitter/dynDDS_Camera_Lidar/dynddssub/ScanDynamicSub.cpp
@@ -830,30 +884,23 @@ CMakeFiles/cameraSub.dir/dynddssub/ScanDynamicSub.cpp.o
  /usr/local/include/fastdds/rtps/transport/TransportInterface.h
  /usr/local/include/fastdds/rtps/common/LocatorSelector.hpp
  /usr/local/include/fastdds/rtps/common/LocatorSelectorEntry.hpp
+ /usr/local/include/fastdds/rtps/transport/SenderResource.h
  /usr/local/include/fastdds/rtps/transport/TransportDescriptorInterface.h
  /usr/local/include/fastdds/rtps/transport/TransportReceiverInterface.h
- /usr/local/include/fastdds/rtps/transport/SenderResource.h
  /usr/local/include/fastdds/rtps/flowcontrol/FlowControllerConsts.hpp
  /usr/local/include/fastrtps/types/TypeObject.h
- /usr/local/include/fastrtps/types/TypesBase.h
- /usr/local/include/fastrtps/types/TypeObjectHashId.h
- /usr/local/include/fastrtps/types/TypeIdentifier.h
- /usr/local/include/fastrtps/types/TypeIdentifierTypes.h
  /usr/local/include/fastrtps/types/AnnotationParameterValue.h
+ /usr/local/include/fastrtps/types/TypeIdentifier.h
+ /usr/local/include/fastrtps/types/TypesBase.h
+ /usr/local/include/fastrtps/types/TypeIdentifierTypes.h
+ /usr/local/include/fastrtps/types/TypeObjectHashId.h
  /usr/local/include/fastrtps/utils/string_convert.hpp
  /usr/local/include/fastdds/dds/builtin/topic/TopicBuiltinTopicData.hpp
  /usr/local/include/fastdds/dds/core/status/StatusMask.hpp
  /usr/local/include/fastdds/dds/core/Entity.hpp
+ /usr/local/include/fastdds/dds/common/InstanceHandle.hpp
  /usr/local/include/fastdds/dds/core/condition/StatusCondition.hpp
  /usr/local/include/fastdds/dds/core/condition/Condition.hpp
- /usr/local/include/fastdds/dds/topic/TypeSupport.hpp
- /usr/local/include/fastdds/dds/topic/TopicDataType.hpp
- /usr/local/include/fastrtps/utils/md5.h
- /usr/local/include/fastrtps/fastrtps_dll.h
- /usr/local/include/fastdds/dds/common/InstanceHandle.hpp
- /usr/local/include/fastrtps/types/DynamicPubSubType.h
- /usr/local/include/fastrtps/types/DynamicTypePtr.h
- /usr/local/include/fastrtps/types/DynamicDataPtr.h
  /usr/local/include/fastdds/dds/domain/qos/DomainParticipantQos.hpp
  /usr/local/include/fastdds/dds/topic/ContentFilteredTopic.hpp
  /usr/local/include/fastdds/dds/topic/TopicDescription.hpp
@@ -869,6 +916,15 @@ CMakeFiles/cameraSub.dir/dynddssub/ScanDynamicSub.cpp.o
  /usr/local/include/fastdds/dds/topic/IContentFilter.hpp
  /usr/local/include/fastrtps/types/TypeDescriptor.h
  /usr/local/include/fastrtps/types/AnnotationDescriptor.h
+ /usr/local/include/fastrtps/types/DynamicTypePtr.h
+ /usr/local/include/fastdds/dds/topic/TopicDataType.hpp
+ /usr/local/include/fastdds/rtps/common/CdrSerialization.hpp
+ /usr/local/include/fastcdr/CdrEncoding.hpp
+ /usr/local/include/fastrtps/utils/md5.h
+ /usr/local/include/fastrtps/fastrtps_dll.h
+ /usr/local/include/fastdds/dds/topic/TypeSupport.hpp
+ /usr/local/include/fastrtps/types/DynamicPubSubType.h
+ /usr/local/include/fastrtps/types/DynamicDataPtr.h
  /usr/local/include/fastdds/dds/topic/TopicListener.hpp
  /usr/local/include/fastdds/dds/domain/DomainParticipantListener.hpp
  /usr/local/include/fastdds/rtps/participant/ParticipantDiscoveryInfo.h

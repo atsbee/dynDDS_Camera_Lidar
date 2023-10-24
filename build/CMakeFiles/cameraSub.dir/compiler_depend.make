@@ -370,30 +370,23 @@ CMakeFiles/cameraSub.dir/cameraSub/cameraDynamicSub.cpp.o: ../cameraSub/cameraDy
   /usr/local/include/fastdds/rtps/transport/TransportInterface.h \
   /usr/local/include/fastdds/rtps/common/LocatorSelector.hpp \
   /usr/local/include/fastdds/rtps/common/LocatorSelectorEntry.hpp \
+  /usr/local/include/fastdds/rtps/transport/SenderResource.h \
   /usr/local/include/fastdds/rtps/transport/TransportDescriptorInterface.h \
   /usr/local/include/fastdds/rtps/transport/TransportReceiverInterface.h \
-  /usr/local/include/fastdds/rtps/transport/SenderResource.h \
   /usr/local/include/fastdds/rtps/flowcontrol/FlowControllerConsts.hpp \
   /usr/local/include/fastrtps/types/TypeObject.h \
-  /usr/local/include/fastrtps/types/TypesBase.h \
-  /usr/local/include/fastrtps/types/TypeObjectHashId.h \
-  /usr/local/include/fastrtps/types/TypeIdentifier.h \
-  /usr/local/include/fastrtps/types/TypeIdentifierTypes.h \
   /usr/local/include/fastrtps/types/AnnotationParameterValue.h \
+  /usr/local/include/fastrtps/types/TypeIdentifier.h \
+  /usr/local/include/fastrtps/types/TypesBase.h \
+  /usr/local/include/fastrtps/types/TypeIdentifierTypes.h \
+  /usr/local/include/fastrtps/types/TypeObjectHashId.h \
   /usr/local/include/fastrtps/utils/string_convert.hpp \
   /usr/local/include/fastdds/dds/builtin/topic/TopicBuiltinTopicData.hpp \
   /usr/local/include/fastdds/dds/core/status/StatusMask.hpp \
   /usr/local/include/fastdds/dds/core/Entity.hpp \
+  /usr/local/include/fastdds/dds/common/InstanceHandle.hpp \
   /usr/local/include/fastdds/dds/core/condition/StatusCondition.hpp \
   /usr/local/include/fastdds/dds/core/condition/Condition.hpp \
-  /usr/local/include/fastdds/dds/topic/TypeSupport.hpp \
-  /usr/local/include/fastdds/dds/topic/TopicDataType.hpp \
-  /usr/local/include/fastrtps/utils/md5.h \
-  /usr/local/include/fastrtps/fastrtps_dll.h \
-  /usr/local/include/fastdds/dds/common/InstanceHandle.hpp \
-  /usr/local/include/fastrtps/types/DynamicPubSubType.h \
-  /usr/local/include/fastrtps/types/DynamicTypePtr.h \
-  /usr/local/include/fastrtps/types/DynamicDataPtr.h \
   /usr/local/include/fastdds/dds/domain/qos/DomainParticipantQos.hpp \
   /usr/local/include/fastdds/dds/topic/ContentFilteredTopic.hpp \
   /usr/local/include/fastdds/dds/topic/TopicDescription.hpp \
@@ -409,6 +402,15 @@ CMakeFiles/cameraSub.dir/cameraSub/cameraDynamicSub.cpp.o: ../cameraSub/cameraDy
   /usr/local/include/fastdds/dds/topic/IContentFilter.hpp \
   /usr/local/include/fastrtps/types/TypeDescriptor.h \
   /usr/local/include/fastrtps/types/AnnotationDescriptor.h \
+  /usr/local/include/fastrtps/types/DynamicTypePtr.h \
+  /usr/local/include/fastdds/dds/topic/TopicDataType.hpp \
+  /usr/local/include/fastdds/rtps/common/CdrSerialization.hpp \
+  /usr/local/include/fastcdr/CdrEncoding.hpp \
+  /usr/local/include/fastrtps/utils/md5.h \
+  /usr/local/include/fastrtps/fastrtps_dll.h \
+  /usr/local/include/fastdds/dds/topic/TypeSupport.hpp \
+  /usr/local/include/fastrtps/types/DynamicPubSubType.h \
+  /usr/local/include/fastrtps/types/DynamicDataPtr.h \
   /usr/local/include/fastdds/dds/topic/TopicListener.hpp \
   /usr/local/include/fastdds/dds/domain/DomainParticipantListener.hpp \
   /usr/local/include/fastdds/rtps/participant/ParticipantDiscoveryInfo.h \
@@ -457,7 +459,59 @@ CMakeFiles/cameraSub.dir/cameraSub/cameraDynamicSub.cpp.o: ../cameraSub/cameraDy
   /usr/include/c++/11/condition_variable \
   /usr/include/c++/11/bits/std_mutex.h \
   /usr/include/c++/11/bits/unique_lock.h \
-  /usr/include/c++/11/any
+  /usr/include/c++/11/any \
+  /usr/local/include/opencv4/opencv2/highgui/highgui.hpp \
+  /usr/local/include/opencv4/opencv2/highgui.hpp \
+  /usr/local/include/opencv4/opencv2/core.hpp \
+  /usr/local/include/opencv4/opencv2/core/cvdef.h \
+  /usr/local/include/opencv4/opencv2/core/version.hpp \
+  /usr/local/include/opencv4/opencv2/core/hal/interface.h \
+  /usr/local/include/opencv4/opencv2/core/cv_cpu_dispatch.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/emmintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/xmmintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/mmintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/mm_malloc.h \
+  /usr/local/include/opencv4/opencv2/core/base.hpp \
+  /usr/local/include/opencv4/opencv2/opencv_modules.hpp \
+  /usr/include/c++/11/climits \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/syslimits.h \
+  /usr/include/limits.h \
+  /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
+  /usr/include/x86_64-linux-gnu/bits/local_lim.h \
+  /usr/include/linux/limits.h \
+  /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
+  /usr/include/x86_64-linux-gnu/bits/xopen_lim.h \
+  /usr/include/x86_64-linux-gnu/bits/uio_lim.h \
+  /usr/local/include/opencv4/opencv2/core/cvstd.hpp \
+  /usr/local/include/opencv4/opencv2/core/cvstd_wrapper.hpp \
+  /usr/local/include/opencv4/opencv2/core/neon_utils.hpp \
+  /usr/local/include/opencv4/opencv2/core/vsx_utils.hpp \
+  /usr/local/include/opencv4/opencv2/core/check.hpp \
+  /usr/local/include/opencv4/opencv2/core/traits.hpp \
+  /usr/local/include/opencv4/opencv2/core/matx.hpp \
+  /usr/local/include/opencv4/opencv2/core/saturate.hpp \
+  /usr/local/include/opencv4/opencv2/core/fast_math.hpp \
+  /usr/local/include/opencv4/opencv2/core/types.hpp \
+  /usr/include/c++/11/cfloat \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/float.h \
+  /usr/local/include/opencv4/opencv2/core/mat.hpp \
+  /usr/local/include/opencv4/opencv2/core/bufferpool.hpp \
+  /usr/local/include/opencv4/opencv2/core/mat.inl.hpp \
+  /usr/local/include/opencv4/opencv2/core/persistence.hpp \
+  /usr/local/include/opencv4/opencv2/core/operations.hpp \
+  /usr/local/include/opencv4/opencv2/core/cvstd.inl.hpp \
+  /usr/include/c++/11/complex \
+  /usr/local/include/opencv4/opencv2/core/utility.hpp \
+  /usr/include/c++/11/mutex \
+  /usr/local/include/opencv4/opencv2/core/optim.hpp \
+  /usr/local/include/opencv4/opencv2/core/ovx.hpp \
+  /usr/local/include/opencv4/opencv2/core/cvdef.h \
+  /usr/local/include/opencv4/opencv2/imgcodecs.hpp \
+  /usr/local/include/opencv4/opencv2/videoio.hpp \
+  /usr/local/include/opencv4/opencv2/imgproc/imgproc.hpp \
+  /usr/local/include/opencv4/opencv2/imgproc.hpp \
+  /usr/local/include/opencv4/opencv2/imgproc/segmentation.hpp
 
 CMakeFiles/cameraSub.dir/dynddssub/ScanDynamicSub.cpp.o: ../dynddssub/ScanDynamicSub.cpp \
   /usr/include/stdc-predef.h \
@@ -828,30 +882,23 @@ CMakeFiles/cameraSub.dir/dynddssub/ScanDynamicSub.cpp.o: ../dynddssub/ScanDynami
   /usr/local/include/fastdds/rtps/transport/TransportInterface.h \
   /usr/local/include/fastdds/rtps/common/LocatorSelector.hpp \
   /usr/local/include/fastdds/rtps/common/LocatorSelectorEntry.hpp \
+  /usr/local/include/fastdds/rtps/transport/SenderResource.h \
   /usr/local/include/fastdds/rtps/transport/TransportDescriptorInterface.h \
   /usr/local/include/fastdds/rtps/transport/TransportReceiverInterface.h \
-  /usr/local/include/fastdds/rtps/transport/SenderResource.h \
   /usr/local/include/fastdds/rtps/flowcontrol/FlowControllerConsts.hpp \
   /usr/local/include/fastrtps/types/TypeObject.h \
-  /usr/local/include/fastrtps/types/TypesBase.h \
-  /usr/local/include/fastrtps/types/TypeObjectHashId.h \
-  /usr/local/include/fastrtps/types/TypeIdentifier.h \
-  /usr/local/include/fastrtps/types/TypeIdentifierTypes.h \
   /usr/local/include/fastrtps/types/AnnotationParameterValue.h \
+  /usr/local/include/fastrtps/types/TypeIdentifier.h \
+  /usr/local/include/fastrtps/types/TypesBase.h \
+  /usr/local/include/fastrtps/types/TypeIdentifierTypes.h \
+  /usr/local/include/fastrtps/types/TypeObjectHashId.h \
   /usr/local/include/fastrtps/utils/string_convert.hpp \
   /usr/local/include/fastdds/dds/builtin/topic/TopicBuiltinTopicData.hpp \
   /usr/local/include/fastdds/dds/core/status/StatusMask.hpp \
   /usr/local/include/fastdds/dds/core/Entity.hpp \
+  /usr/local/include/fastdds/dds/common/InstanceHandle.hpp \
   /usr/local/include/fastdds/dds/core/condition/StatusCondition.hpp \
   /usr/local/include/fastdds/dds/core/condition/Condition.hpp \
-  /usr/local/include/fastdds/dds/topic/TypeSupport.hpp \
-  /usr/local/include/fastdds/dds/topic/TopicDataType.hpp \
-  /usr/local/include/fastrtps/utils/md5.h \
-  /usr/local/include/fastrtps/fastrtps_dll.h \
-  /usr/local/include/fastdds/dds/common/InstanceHandle.hpp \
-  /usr/local/include/fastrtps/types/DynamicPubSubType.h \
-  /usr/local/include/fastrtps/types/DynamicTypePtr.h \
-  /usr/local/include/fastrtps/types/DynamicDataPtr.h \
   /usr/local/include/fastdds/dds/domain/qos/DomainParticipantQos.hpp \
   /usr/local/include/fastdds/dds/topic/ContentFilteredTopic.hpp \
   /usr/local/include/fastdds/dds/topic/TopicDescription.hpp \
@@ -867,6 +914,15 @@ CMakeFiles/cameraSub.dir/dynddssub/ScanDynamicSub.cpp.o: ../dynddssub/ScanDynami
   /usr/local/include/fastdds/dds/topic/IContentFilter.hpp \
   /usr/local/include/fastrtps/types/TypeDescriptor.h \
   /usr/local/include/fastrtps/types/AnnotationDescriptor.h \
+  /usr/local/include/fastrtps/types/DynamicTypePtr.h \
+  /usr/local/include/fastdds/dds/topic/TopicDataType.hpp \
+  /usr/local/include/fastdds/rtps/common/CdrSerialization.hpp \
+  /usr/local/include/fastcdr/CdrEncoding.hpp \
+  /usr/local/include/fastrtps/utils/md5.h \
+  /usr/local/include/fastrtps/fastrtps_dll.h \
+  /usr/local/include/fastdds/dds/topic/TypeSupport.hpp \
+  /usr/local/include/fastrtps/types/DynamicPubSubType.h \
+  /usr/local/include/fastrtps/types/DynamicDataPtr.h \
   /usr/local/include/fastdds/dds/topic/TopicListener.hpp \
   /usr/local/include/fastdds/dds/domain/DomainParticipantListener.hpp \
   /usr/local/include/fastdds/rtps/participant/ParticipantDiscoveryInfo.h \
@@ -948,21 +1004,15 @@ CMakeFiles/cameraSub.dir/dynddssub/ScanDynamicSub.cpp.o: ../dynddssub/ScanDynami
 
 /usr/local/include/fastrtps/attributes/ReplierAttributes.hpp:
 
-/usr/local/include/fastrtps/attributes/RequesterAttributes.hpp:
-
 /usr/local/include/fastrtps/transport/TransportDescriptorInterface.h:
 
 /usr/local/include/fastrtps/xmlparser/XMLParser.h:
-
-/usr/local/include/fastrtps/xmlparser/XMLProfileManager.h:
 
 /usr/local/include/fastrtps/types/DynamicTypeBuilder.h:
 
 /usr/local/include/fastrtps/types/DynamicDataFactory.h:
 
 /usr/local/include/fastrtps/types/MemberDescriptor.h:
-
-/usr/include/c++/11/mutex:
 
 /usr/local/include/fastdds/dds/domain/qos/DomainParticipantFactoryQos.hpp:
 
@@ -971,6 +1021,64 @@ CMakeFiles/cameraSub.dir/dynddssub/ScanDynamicSub.cpp.o: ../dynddssub/ScanDynami
 /usr/local/include/fastdds/dds/subscriber/Subscriber.hpp:
 
 ../dynddssub/ScanDynamicSub.cpp:
+
+/usr/local/include/opencv4/opencv2/imgproc/segmentation.hpp:
+
+/usr/local/include/opencv4/opencv2/videoio.hpp:
+
+/usr/local/include/opencv4/opencv2/core/ovx.hpp:
+
+/usr/local/include/opencv4/opencv2/core/optim.hpp:
+
+/usr/include/c++/11/mutex:
+
+/usr/local/include/opencv4/opencv2/core/utility.hpp:
+
+/usr/local/include/fastrtps/xmlparser/XMLProfileManager.h:
+
+/usr/local/include/opencv4/opencv2/core/cvstd.inl.hpp:
+
+/usr/local/include/opencv4/opencv2/core/mat.hpp:
+
+/usr/local/include/opencv4/opencv2/core/types.hpp:
+
+/usr/local/include/opencv4/opencv2/core/check.hpp:
+
+/usr/local/include/opencv4/opencv2/core/vsx_utils.hpp:
+
+/usr/local/include/opencv4/opencv2/core/neon_utils.hpp:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/float.h:
+
+/usr/local/include/opencv4/opencv2/core/cvstd_wrapper.hpp:
+
+/usr/local/include/opencv4/opencv2/core/cvstd.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/local_lim.h:
+
+/usr/include/x86_64-linux-gnu/bits/posix1_lim.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h:
+
+/usr/local/include/opencv4/opencv2/opencv_modules.hpp:
+
+/usr/local/include/opencv4/opencv2/core/base.hpp:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/xmmintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/emmintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/mmintrin.h:
+
+/usr/local/include/opencv4/opencv2/core/cv_cpu_dispatch.h:
+
+/usr/local/include/fastrtps/attributes/RequesterAttributes.hpp:
+
+/usr/local/include/opencv4/opencv2/core/hal/interface.h:
+
+/usr/local/include/opencv4/opencv2/core/version.hpp:
+
+/usr/local/include/opencv4/opencv2/core.hpp:
 
 /usr/local/include/fastrtps/rtps/common/Types.h:
 
@@ -1012,6 +1120,16 @@ CMakeFiles/cameraSub.dir/dynddssub/ScanDynamicSub.cpp.o: ../dynddssub/ScanDynami
 
 /usr/local/include/fastdds/dds/domain/DomainParticipantListener.hpp:
 
+/usr/local/include/fastrtps/utils/md5.h:
+
+/usr/local/include/fastcdr/CdrEncoding.hpp:
+
+/usr/local/include/fastdds/rtps/common/CdrSerialization.hpp:
+
+/usr/local/include/fastdds/dds/topic/TopicDataType.hpp:
+
+/usr/local/include/fastrtps/types/DynamicTypePtr.h:
+
 /usr/local/include/fastdds/dds/core/LoanableCollection.hpp:
 
 /usr/local/include/fastdds/dds/topic/IContentFilterFactory.hpp:
@@ -1024,25 +1142,19 @@ CMakeFiles/cameraSub.dir/dynddssub/ScanDynamicSub.cpp.o: ../dynddssub/ScanDynami
 
 /usr/local/include/fastdds/dds/topic/ContentFilteredTopic.hpp:
 
-/usr/local/include/fastrtps/types/DynamicTypePtr.h:
+/usr/local/include/fastdds/dds/core/condition/Condition.hpp:
 
 /usr/local/include/fastdds/dds/common/InstanceHandle.hpp:
 
-/usr/local/include/fastrtps/utils/md5.h:
-
-/usr/local/include/fastdds/dds/topic/TopicDataType.hpp:
-
-/usr/local/include/fastdds/dds/core/condition/Condition.hpp:
-
 /usr/local/include/fastdds/dds/core/Entity.hpp:
-
-/usr/local/include/fastrtps/types/AnnotationParameterValue.h:
-
-/usr/local/include/fastrtps/types/TypeIdentifierTypes.h:
 
 /usr/local/include/fastrtps/types/TypeObjectHashId.h:
 
+/usr/local/include/fastrtps/types/TypeIdentifierTypes.h:
+
 /usr/local/include/fastrtps/types/TypesBase.h:
+
+/usr/local/include/fastrtps/types/AnnotationParameterValue.h:
 
 /usr/local/include/fastrtps/types/TypeObject.h:
 
@@ -1100,6 +1212,8 @@ CMakeFiles/cameraSub.dir/dynddssub/ScanDynamicSub.cpp.o: ../dynddssub/ScanDynami
 
 /usr/include/c++/11/tr1/modified_bessel_func.tcc:
 
+/usr/local/include/opencv4/opencv2/core/persistence.hpp:
+
 /usr/include/c++/11/tr1/hypergeometric.tcc:
 
 /usr/include/c++/11/tr1/exp_integral.tcc:
@@ -1144,6 +1258,8 @@ CMakeFiles/cameraSub.dir/dynddssub/ScanDynamicSub.cpp.o: ../dynddssub/ScanDynami
 
 /usr/include/c++/11/bits/stl_multiset.h:
 
+/usr/local/include/opencv4/opencv2/highgui.hpp:
+
 /usr/include/c++/11/bits/stl_set.h:
 
 /usr/local/include/fastdds/rtps/attributes/RTPSParticipantAllocationAttributes.hpp:
@@ -1175,6 +1291,8 @@ CMakeFiles/cameraSub.dir/dynddssub/ScanDynamicSub.cpp.o: ../dynddssub/ScanDynami
 /usr/include/c++/11/bits/stl_map.h:
 
 /usr/include/c++/11/bits/stl_tree.h:
+
+/usr/local/include/opencv4/opencv2/imgcodecs.hpp:
 
 /usr/include/c++/11/map:
 
@@ -1216,6 +1334,8 @@ CMakeFiles/cameraSub.dir/dynddssub/ScanDynamicSub.cpp.o: ../dynddssub/ScanDynami
 
 /usr/local/include/fastrtps/types/DynamicType.h:
 
+/usr/include/linux/limits.h:
+
 /usr/include/c++/11/bits/shared_ptr_base.h:
 
 /usr/include/c++/11/bits/basic_string.h:
@@ -1254,6 +1374,8 @@ CMakeFiles/cameraSub.dir/dynddssub/ScanDynamicSub.cpp.o: ../dynddssub/ScanDynami
 
 /usr/include/x86_64-linux-gnu/bits/types/timer_t.h:
 
+/usr/include/x86_64-linux-gnu/bits/xopen_lim.h:
+
 /usr/local/include/fastdds/rtps/common/Guid.h:
 
 /usr/include/x86_64-linux-gnu/bits/select.h:
@@ -1290,6 +1412,10 @@ CMakeFiles/cameraSub.dir/dynddssub/ScanDynamicSub.cpp.o: ../dynddssub/ScanDynami
 
 /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h:
 
+/usr/local/include/opencv4/opencv2/imgproc/imgproc.hpp:
+
+/usr/local/include/opencv4/opencv2/core/traits.hpp:
+
 /usr/local/include/fastdds/rtps/transport/TransportReceiverInterface.h:
 
 /usr/local/include/fastdds/rtps/common/PortParameters.h:
@@ -1308,11 +1434,17 @@ CMakeFiles/cameraSub.dir/dynddssub/ScanDynamicSub.cpp.o: ../dynddssub/ScanDynami
 
 /usr/include/c++/11/unordered_map:
 
+/usr/include/c++/11/cfloat:
+
 /usr/include/x86_64-linux-gnu/bits/stdint-intn.h:
 
 /usr/include/x86_64-linux-gnu/bits/types.h:
 
+/usr/local/include/opencv4/opencv2/core/bufferpool.hpp:
+
 /usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h:
+
+/usr/local/include/opencv4/opencv2/imgproc.hpp:
 
 /usr/include/c++/11/bits/unordered_map.h:
 
@@ -1333,6 +1465,8 @@ CMakeFiles/cameraSub.dir/dynddssub/ScanDynamicSub.cpp.o: ../dynddssub/ScanDynami
 /usr/local/include/fastdds/rtps/security/common/ParticipantGenericMessage.h:
 
 /usr/include/c++/11/bits/ostream.tcc:
+
+/usr/include/c++/11/climits:
 
 /usr/include/c++/11/bits/sstream.tcc:
 
@@ -1358,6 +1492,8 @@ CMakeFiles/cameraSub.dir/dynddssub/ScanDynamicSub.cpp.o: ../dynddssub/ScanDynami
 
 /usr/include/c++/11/bits/cxxabi_init_exception.h:
 
+/usr/include/x86_64-linux-gnu/bits/uio_lim.h:
+
 /usr/include/c++/11/string:
 
 /usr/include/x86_64-linux-gnu/bits/types/time_t.h:
@@ -1367,6 +1503,8 @@ CMakeFiles/cameraSub.dir/dynddssub/ScanDynamicSub.cpp.o: ../dynddssub/ScanDynami
 /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h:
 
 /usr/include/x86_64-linux-gnu/bits/timesize.h:
+
+/usr/include/c++/11/complex:
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/cpu_defines.h:
 
@@ -1379,6 +1517,8 @@ CMakeFiles/cameraSub.dir/dynddssub/ScanDynamicSub.cpp.o: ../dynddssub/ScanDynami
 /usr/include/c++/11/cstdint:
 
 /usr/include/x86_64-linux-gnu/bits/waitstatus.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/syslimits.h:
 
 /usr/include/c++/11/debug/debug.h:
 
@@ -1399,6 +1539,8 @@ CMakeFiles/cameraSub.dir/dynddssub/ScanDynamicSub.cpp.o: ../dynddssub/ScanDynami
 /usr/include/c++/11/bits/memoryfwd.h:
 
 /usr/include/c++/11/bits/stl_function.h:
+
+/usr/local/include/opencv4/opencv2/core/fast_math.hpp:
 
 /usr/local/include/fastrtps/qos/DeadlineMissedStatus.h:
 
@@ -1499,6 +1641,8 @@ CMakeFiles/cameraSub.dir/dynddssub/ScanDynamicSub.cpp.o: ../dynddssub/ScanDynami
 /usr/include/c++/11/any:
 
 /usr/include/c++/11/bits/unique_ptr.h:
+
+/usr/local/include/opencv4/opencv2/core/cvdef.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h:
 
@@ -1620,6 +1764,8 @@ CMakeFiles/cameraSub.dir/dynddssub/ScanDynamicSub.cpp.o: ../dynddssub/ScanDynami
 
 /usr/include/c++/11/initializer_list:
 
+/usr/local/include/opencv4/opencv2/core/matx.hpp:
+
 /usr/include/c++/11/bits/regex.tcc:
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/c++locale.h:
@@ -1631,6 +1777,8 @@ CMakeFiles/cameraSub.dir/dynddssub/ScanDynamicSub.cpp.o: ../dynddssub/ScanDynami
 /usr/include/c++/11/bits/functional_hash.h:
 
 /usr/local/include/fastdds/dds/builtin/topic/ParticipantBuiltinTopicData.hpp:
+
+/usr/local/include/opencv4/opencv2/core/saturate.hpp:
 
 /usr/include/stdlib.h:
 
@@ -1657,6 +1805,8 @@ CMakeFiles/cameraSub.dir/dynddssub/ScanDynamicSub.cpp.o: ../dynddssub/ScanDynami
 /usr/include/c++/11/chrono:
 
 /usr/include/stdio.h:
+
+/usr/local/include/opencv4/opencv2/highgui/highgui.hpp:
 
 /usr/local/include/fastdds/dds/core/status/BaseStatus.hpp:
 
@@ -1694,6 +1844,8 @@ CMakeFiles/cameraSub.dir/dynddssub/ScanDynamicSub.cpp.o: ../dynddssub/ScanDynami
 
 /usr/include/c++/11/bits/locale_classes.tcc:
 
+/usr/lib/gcc/x86_64-linux-gnu/11/include/mm_malloc.h:
+
 /usr/local/include/fastdds/dds/subscriber/ReadCondition.hpp:
 
 /usr/include/c++/11/system_error:
@@ -1701,6 +1853,8 @@ CMakeFiles/cameraSub.dir/dynddssub/ScanDynamicSub.cpp.o: ../dynddssub/ScanDynami
 /usr/include/c++/11/cstddef:
 
 /usr/include/c++/11/bits/stl_vector.h:
+
+/usr/local/include/opencv4/opencv2/core/mat.inl.hpp:
 
 /usr/include/c++/11/ios:
 
@@ -1774,6 +1928,8 @@ CMakeFiles/cameraSub.dir/dynddssub/ScanDynamicSub.cpp.o: ../dynddssub/ScanDynami
 
 /usr/include/c++/11/bits/std_thread.h:
 
+/usr/include/limits.h:
+
 /usr/include/c++/11/bits/regex_compiler.tcc:
 
 /usr/local/include/fastdds/rtps/common/EntityId_t.hpp:
@@ -1807,6 +1963,8 @@ CMakeFiles/cameraSub.dir/dynddssub/ScanDynamicSub.cpp.o: ../dynddssub/ScanDynami
 /usr/include/c++/11/vector:
 
 /usr/local/include/fastrtps/xmlparser/XMLParserCommon.h:
+
+/usr/local/include/opencv4/opencv2/core/operations.hpp:
 
 /usr/include/c++/11/bits/stl_uninitialized.h:
 
@@ -1847,6 +2005,8 @@ CMakeFiles/cameraSub.dir/dynddssub/ScanDynamicSub.cpp.o: ../dynddssub/ScanDynami
 /usr/include/c++/11/ext/atomicity.h:
 
 /usr/local/include/fastdds/rtps/common/Locator.h:
+
+/usr/include/x86_64-linux-gnu/bits/posix2_lim.h:
 
 /usr/local/include/fastrtps/eProsima_auto_link.h:
 

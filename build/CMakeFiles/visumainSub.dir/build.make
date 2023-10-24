@@ -124,7 +124,7 @@ visumainSub: CMakeFiles/visumainSub.dir/visuSub/visuDynamicSub.cpp.o
 visumainSub: CMakeFiles/visumainSub.dir/dynddssub/ScanDynamicSub.cpp.o
 visumainSub: CMakeFiles/visumainSub.dir/visuSub/visualization.cpp.o
 visumainSub: CMakeFiles/visumainSub.dir/build.make
-visumainSub: /usr/local/lib/libfastrtps.so.2.10.0
+visumainSub: /usr/local/lib/libfastrtps.a
 visumainSub: /usr/local/lib/libfastcdr.a
 visumainSub: /usr/local/lib/libfoonathan_memory-0.7.3.a
 visumainSub: /usr/lib/x86_64-linux-gnu/libtinyxml2.so

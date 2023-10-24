@@ -108,7 +108,7 @@ ScanDynamicPub2_EXTERNAL_OBJECTS =
 ScanDynamicPub2: CMakeFiles/ScanDynamicPub2.dir/dummyPub/mainDynamicPub2.cpp.o
 ScanDynamicPub2: CMakeFiles/ScanDynamicPub2.dir/dynddspub/ScanDynamicPub.cpp.o
 ScanDynamicPub2: CMakeFiles/ScanDynamicPub2.dir/build.make
-ScanDynamicPub2: /usr/local/lib/libfastrtps.so.2.10.0
+ScanDynamicPub2: /usr/local/lib/libfastrtps.a
 ScanDynamicPub2: /usr/local/lib/libfastcdr.a
 ScanDynamicPub2: /usr/local/lib/libfoonathan_memory-0.7.3.a
 ScanDynamicPub2: /usr/lib/x86_64-linux-gnu/libtinyxml2.so

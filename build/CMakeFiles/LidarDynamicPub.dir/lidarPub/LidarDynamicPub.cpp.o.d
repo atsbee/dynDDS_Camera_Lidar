@@ -217,47 +217,13 @@ CMakeFiles/LidarDynamicPub.dir/lidarPub/LidarDynamicPub.cpp.o: \
  /usr/local/include/fastdds/dds/core/status/BaseStatus.hpp \
  /usr/local/include/fastdds/dds/core/status/PublicationMatchedStatus.hpp \
  /usr/local/include/fastdds/dds/core/status/MatchedStatus.hpp \
- /usr/local/include/fastdds/dds/topic/TypeSupport.hpp \
- /usr/local/include/fastdds/dds/topic/TopicDataType.hpp \
- /usr/include/c++/11/functional /usr/include/c++/11/bits/std_function.h \
- /usr/include/c++/11/unordered_map \
- /usr/include/c++/11/ext/aligned_buffer.h \
- /usr/include/c++/11/bits/hashtable.h \
- /usr/include/c++/11/bits/hashtable_policy.h \
- /usr/include/c++/11/bits/enable_special_members.h \
- /usr/include/c++/11/bits/node_handle.h \
- /usr/include/c++/11/bits/unordered_map.h \
- /usr/include/c++/11/bits/erase_if.h /usr/include/c++/11/vector \
- /usr/include/c++/11/bits/stl_uninitialized.h \
- /usr/include/c++/11/bits/stl_vector.h \
- /usr/include/c++/11/bits/stl_bvector.h \
- /usr/include/c++/11/bits/vector.tcc /usr/include/c++/11/bits/stl_algo.h \
- /usr/include/c++/11/bits/algorithmfwd.h \
- /usr/include/c++/11/bits/stl_heap.h \
- /usr/include/c++/11/bits/stl_tempbuf.h \
- /usr/include/c++/11/bits/uniform_int_dist.h /usr/include/c++/11/memory \
- /usr/include/c++/11/bits/stl_raw_storage_iter.h \
- /usr/include/c++/11/bits/align.h /usr/include/c++/11/bit \
- /usr/include/c++/11/bits/shared_ptr.h \
- /usr/include/c++/11/bits/shared_ptr_base.h \
- /usr/include/c++/11/bits/allocated_ptr.h \
- /usr/include/c++/11/ext/concurrence.h \
- /usr/include/c++/11/bits/shared_ptr_atomic.h \
- /usr/include/c++/11/bits/atomic_base.h \
- /usr/include/c++/11/bits/atomic_lockfree_defines.h \
- /usr/include/c++/11/backward/auto_ptr.h \
- /usr/include/c++/11/pstl/glue_memory_defs.h \
- /usr/include/c++/11/pstl/execution_defs.h \
- /usr/local/include/fastdds/dds/core/policy/QosPolicies.hpp \
- /usr/local/include/fastdds/dds/core/policy/ParameterTypes.hpp \
- /usr/local/include/fastdds/rtps/common/all_common.h \
- /usr/local/include/fastdds/rtps/common/CDRMessage_t.h \
- /usr/local/include/fastdds/rtps/common/SerializedPayload.h \
- /usr/include/c++/11/cstring /usr/include/c++/11/cassert \
- /usr/include/assert.h /usr/local/include/fastdds/rtps/common/Guid.h \
+ /usr/local/include/fastdds/dds/common/InstanceHandle.hpp \
+ /usr/local/include/fastdds/rtps/common/InstanceHandle.h \
+ /usr/local/include/fastdds/rtps/common/Guid.h \
  /usr/local/include/fastdds/rtps/common/GuidPrefix_t.hpp \
- /usr/include/c++/11/sstream /usr/include/c++/11/bits/sstream.tcc \
- /usr/include/c++/11/iomanip /usr/include/c++/11/locale \
+ /usr/include/c++/11/cstring /usr/include/c++/11/sstream \
+ /usr/include/c++/11/bits/sstream.tcc /usr/include/c++/11/iomanip \
+ /usr/include/c++/11/locale \
  /usr/include/c++/11/bits/locale_facets_nonio.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/time_members.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/messages_members.h \
@@ -266,14 +232,50 @@ CMakeFiles/LidarDynamicPub.dir/lidarPub/LidarDynamicPub.cpp.o: \
  /usr/include/c++/11/bits/locale_conv.h \
  /usr/include/c++/11/bits/quoted_string.h \
  /usr/local/include/fastdds/rtps/common/EntityId_t.hpp \
- /usr/local/include/fastdds/rtps/common/InstanceHandle.h \
+ /usr/local/include/fastdds/dds/core/status/IncompatibleQosStatus.hpp \
+ /usr/local/include/fastdds/dds/core/policy/QosPolicies.hpp \
+ /usr/include/c++/11/vector /usr/include/c++/11/bits/stl_uninitialized.h \
+ /usr/include/c++/11/bits/stl_vector.h \
+ /usr/include/c++/11/bits/stl_bvector.h \
+ /usr/include/c++/11/bits/vector.tcc \
+ /usr/local/include/fastdds/dds/core/policy/ParameterTypes.hpp \
+ /usr/local/include/fastdds/rtps/common/all_common.h \
+ /usr/local/include/fastdds/rtps/common/CDRMessage_t.h \
+ /usr/local/include/fastdds/rtps/common/SerializedPayload.h \
+ /usr/include/c++/11/cassert /usr/include/assert.h \
  /usr/local/include/fastdds/rtps/common/Locator.h \
  /usr/local/include/fastrtps/utils/IPLocator.h \
  /usr/local/include/fastdds/dds/log/Log.hpp /usr/include/c++/11/atomic \
+ /usr/include/c++/11/bits/atomic_base.h \
+ /usr/include/c++/11/bits/atomic_lockfree_defines.h \
  /usr/include/c++/11/regex /usr/include/c++/11/algorithm \
+ /usr/include/c++/11/bits/stl_algo.h \
+ /usr/include/c++/11/bits/algorithmfwd.h \
+ /usr/include/c++/11/bits/stl_heap.h \
+ /usr/include/c++/11/bits/stl_tempbuf.h \
+ /usr/include/c++/11/bits/uniform_int_dist.h \
  /usr/include/c++/11/pstl/glue_algorithm_defs.h \
- /usr/include/c++/11/bitset /usr/include/c++/11/iterator \
- /usr/include/c++/11/bits/stream_iterator.h /usr/include/c++/11/stack \
+ /usr/include/c++/11/functional /usr/include/c++/11/bits/std_function.h \
+ /usr/include/c++/11/unordered_map \
+ /usr/include/c++/11/ext/aligned_buffer.h \
+ /usr/include/c++/11/bits/hashtable.h \
+ /usr/include/c++/11/bits/hashtable_policy.h \
+ /usr/include/c++/11/bits/enable_special_members.h \
+ /usr/include/c++/11/bits/node_handle.h \
+ /usr/include/c++/11/bits/unordered_map.h \
+ /usr/include/c++/11/bits/erase_if.h \
+ /usr/include/c++/11/pstl/execution_defs.h /usr/include/c++/11/bitset \
+ /usr/include/c++/11/iterator /usr/include/c++/11/bits/stream_iterator.h \
+ /usr/include/c++/11/memory \
+ /usr/include/c++/11/bits/stl_raw_storage_iter.h \
+ /usr/include/c++/11/bits/align.h /usr/include/c++/11/bit \
+ /usr/include/c++/11/bits/shared_ptr.h \
+ /usr/include/c++/11/bits/shared_ptr_base.h \
+ /usr/include/c++/11/bits/allocated_ptr.h \
+ /usr/include/c++/11/ext/concurrence.h \
+ /usr/include/c++/11/bits/shared_ptr_atomic.h \
+ /usr/include/c++/11/backward/auto_ptr.h \
+ /usr/include/c++/11/pstl/glue_memory_defs.h /usr/include/c++/11/stack \
  /usr/include/c++/11/deque /usr/include/c++/11/bits/stl_deque.h \
  /usr/include/c++/11/bits/deque.tcc /usr/include/c++/11/bits/stl_stack.h \
  /usr/include/c++/11/map /usr/include/c++/11/bits/stl_tree.h \
@@ -336,25 +338,27 @@ CMakeFiles/LidarDynamicPub.dir/lidarPub/LidarDynamicPub.cpp.o: \
  /usr/local/include/fastdds/rtps/transport/TransportInterface.h \
  /usr/local/include/fastdds/rtps/common/LocatorSelector.hpp \
  /usr/local/include/fastdds/rtps/common/LocatorSelectorEntry.hpp \
+ /usr/local/include/fastdds/rtps/transport/SenderResource.h \
  /usr/local/include/fastdds/rtps/transport/TransportDescriptorInterface.h \
  /usr/local/include/fastdds/rtps/transport/TransportReceiverInterface.h \
- /usr/local/include/fastdds/rtps/transport/SenderResource.h \
  /usr/local/include/fastdds/rtps/flowcontrol/FlowControllerConsts.hpp \
  /usr/local/include/fastrtps/types/TypeObject.h \
- /usr/local/include/fastrtps/types/TypesBase.h \
- /usr/local/include/fastrtps/types/TypeObjectHashId.h \
- /usr/local/include/fastrtps/types/TypeIdentifier.h \
- /usr/local/include/fastrtps/types/TypeIdentifierTypes.h \
  /usr/local/include/fastrtps/types/AnnotationParameterValue.h \
+ /usr/local/include/fastrtps/types/TypeIdentifier.h \
+ /usr/local/include/fastrtps/types/TypesBase.h \
+ /usr/local/include/fastrtps/types/TypeIdentifierTypes.h \
+ /usr/local/include/fastrtps/types/TypeObjectHashId.h \
  /usr/local/include/fastrtps/utils/string_convert.hpp \
+ /usr/local/include/fastdds/dds/core/status/DeadlineMissedStatus.hpp \
+ /usr/local/include/fastdds/dds/topic/TypeSupport.hpp \
+ /usr/local/include/fastdds/dds/topic/TopicDataType.hpp \
+ /usr/local/include/fastdds/rtps/common/CdrSerialization.hpp \
+ /usr/local/include/fastcdr/CdrEncoding.hpp \
  /usr/local/include/fastrtps/utils/md5.h \
  /usr/local/include/fastrtps/fastrtps_dll.h \
- /usr/local/include/fastdds/dds/common/InstanceHandle.hpp \
  /usr/local/include/fastrtps/types/DynamicPubSubType.h \
  /usr/local/include/fastrtps/types/DynamicTypePtr.h \
  /usr/local/include/fastrtps/types/DynamicDataPtr.h \
- /usr/local/include/fastdds/dds/core/status/IncompatibleQosStatus.hpp \
- /usr/local/include/fastdds/dds/core/status/DeadlineMissedStatus.hpp \
  /usr/local/include/fastdds/dds/domain/DomainParticipant.hpp \
  /usr/local/include/fastdds/dds/builtin/topic/ParticipantBuiltinTopicData.hpp \
  /usr/local/include/fastdds/dds/builtin/topic/BuiltinTopicKey.hpp \
@@ -378,6 +382,42 @@ CMakeFiles/LidarDynamicPub.dir/lidarPub/LidarDynamicPub.cpp.o: \
  /usr/local/include/fastrtps/types/TypeDescriptor.h \
  /usr/local/include/fastrtps/types/AnnotationDescriptor.h \
  /usr/local/include/fastdds/dds/topic/TopicListener.hpp \
+ /usr/local/include/fastrtps/attributes/ParticipantAttributes.h \
+ /usr/local/include/fastrtps/attributes/PublisherAttributes.h \
+ /usr/local/include/fastdds/rtps/attributes/WriterAttributes.h \
+ /usr/local/include/fastdds/rtps/attributes/EndpointAttributes.h \
+ /usr/local/include/fastrtps/qos/WriterQos.h \
+ /usr/local/include/fastdds/dds/publisher/qos/WriterQos.hpp \
+ /usr/local/include/fastdds/dds/publisher/Publisher.hpp \
+ /usr/local/include/fastdds/dds/publisher/qos/DataWriterQos.hpp \
+ /usr/local/include/fastdds/dds/publisher/qos/PublisherQos.hpp \
+ /usr/local/include/fastdds/dds/core/policy/WriterDataLifecycleQosPolicy.hpp \
+ /usr/local/include/fastdds/dds/publisher/DataWriter.hpp \
+ /usr/local/include/fastdds/dds/builtin/topic/SubscriptionBuiltinTopicData.hpp \
+ /usr/local/include/fastrtps/qos/DeadlineMissedStatus.h \
+ /usr/local/include/fastdds/dds/domain/DomainParticipantFactory.hpp \
+ /usr/local/include/fastdds/dds/domain/qos/DomainParticipantFactoryQos.hpp \
+ /usr/include/c++/11/mutex /usr/include/c++/11/bits/std_mutex.h \
+ /usr/include/c++/11/bits/unique_lock.h \
+ /usr/local/include/fastrtps/types/DynamicDataFactory.h \
+ /usr/local/include/fastrtps/types/DynamicTypeBuilder.h \
+ /usr/local/include/fastrtps/types/DynamicType.h \
+ /usr/local/include/fastrtps/types/DynamicData.h \
+ /usr/local/include/fastrtps/xmlparser/XMLProfileManager.h \
+ /usr/local/include/fastrtps/attributes/SubscriberAttributes.h \
+ /usr/local/include/fastdds/rtps/attributes/ReaderAttributes.h \
+ /usr/local/include/fastrtps/qos/ReaderQos.h \
+ /usr/local/include/fastdds/dds/subscriber/qos/ReaderQos.hpp \
+ /usr/local/include/fastrtps/xmlparser/XMLParserCommon.h \
+ /usr/local/include/fastrtps/xmlparser/XMLParser.h \
+ /usr/local/include/fastrtps/transport/TransportDescriptorInterface.h \
+ /usr/local/include/fastrtps/attributes/RequesterAttributes.hpp \
+ /usr/local/include/fastrtps/attributes/PublisherAttributes.h \
+ /usr/local/include/fastrtps/attributes/SubscriberAttributes.h \
+ /usr/local/include/fastrtps/attributes/ReplierAttributes.hpp \
+ /usr/local/include/fastrtps/types/DynamicTypeBuilderPtr.h \
+ /usr/local/include/fastrtps/attributes/LibrarySettingsAttributes.h \
+ /usr/local/include/fastrtps/types/DynamicTypeBuilderFactory.h \
  /home/jamesb/Desktop/gitter/dynDDS_Camera_Lidar/lidarPub/include/sl_lidar.h \
  /home/jamesb/Desktop/gitter/dynDDS_Camera_Lidar/lidarPub/include/sl_lidar_driver.h \
  /home/jamesb/Desktop/gitter/dynDDS_Camera_Lidar/lidarPub/include/sl_lidar_cmd.h \

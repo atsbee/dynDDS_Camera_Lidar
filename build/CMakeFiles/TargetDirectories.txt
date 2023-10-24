@@ -1,9 +1,12 @@
-/home/jamesb/Desktop/gitter/dynDDS_Camera_Lidar/build/CMakeFiles/ScanDynamicPub1.dir
-/home/jamesb/Desktop/gitter/dynDDS_Camera_Lidar/build/CMakeFiles/ScanDynamicPub2.dir
+/home/jamesb/Desktop/gitter/dynDDS_Camera_Lidar/build/CMakeFiles/dummyLidarPub.dir
 /home/jamesb/Desktop/gitter/dynDDS_Camera_Lidar/build/CMakeFiles/dummyCameraAnglePub.dir
 /home/jamesb/Desktop/gitter/dynDDS_Camera_Lidar/build/CMakeFiles/LidarDynamicPub.dir
 /home/jamesb/Desktop/gitter/dynDDS_Camera_Lidar/build/CMakeFiles/visumainSub.dir
 /home/jamesb/Desktop/gitter/dynDDS_Camera_Lidar/build/CMakeFiles/cameraSub.dir
 /home/jamesb/Desktop/gitter/dynDDS_Camera_Lidar/build/CMakeFiles/dummyCameraPub.dir
+/home/jamesb/Desktop/gitter/dynDDS_Camera_Lidar/build/CMakeFiles/ramonePub.dir
+/home/jamesb/Desktop/gitter/dynDDS_Camera_Lidar/build/CMakeFiles/ramoneSub.dir
+/home/jamesb/Desktop/gitter/dynDDS_Camera_Lidar/build/CMakeFiles/ramtenPub.dir
+/home/jamesb/Desktop/gitter/dynDDS_Camera_Lidar/build/CMakeFiles/ramtenSub.dir
 /home/jamesb/Desktop/gitter/dynDDS_Camera_Lidar/build/CMakeFiles/edit_cache.dir
 /home/jamesb/Desktop/gitter/dynDDS_Camera_Lidar/build/CMakeFiles/rebuild_cache.dir

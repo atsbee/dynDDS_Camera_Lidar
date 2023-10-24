@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<types xmlns="http://www.eprosima.com/XMLSchemas/fastRTPS_Profiles" >
+    <type>
+        <struct name="Ten">
+            <member name="float1" type="float32"/>
+            <member name="float2" type="float32"/>
+            <member name="float3" type="float32"/>
+            <member name="float4" type="float32"/>
+            <member name="float5" type="float32"/>
+            <member name="float6" type="float32"/>
+            <member name="float7" type="float32"/>
+            <member name="float8" type="float32"/>
+            <member name="float9" type="float32"/>
+            <member name="float10" type="float32"/>
+        </struct>    
+    </type>
+</types>
