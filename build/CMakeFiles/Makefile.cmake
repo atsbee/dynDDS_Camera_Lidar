@@ -68,10 +68,10 @@ set(CMAKE_MAKEFILE_PRODUCTS
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/dummyLidarPub.dir/DependInfo.cmake"
   "CMakeFiles/dummyCameraAnglePub.dir/DependInfo.cmake"
+  "CMakeFiles/dummyCameraPub.dir/DependInfo.cmake"
   "CMakeFiles/LidarDynamicPub.dir/DependInfo.cmake"
   "CMakeFiles/visumainSub.dir/DependInfo.cmake"
   "CMakeFiles/cameraSub.dir/DependInfo.cmake"
-  "CMakeFiles/dummyCameraPub.dir/DependInfo.cmake"
   "CMakeFiles/ramonePub.dir/DependInfo.cmake"
   "CMakeFiles/ramoneSub.dir/DependInfo.cmake"
   "CMakeFiles/ramtenPub.dir/DependInfo.cmake"

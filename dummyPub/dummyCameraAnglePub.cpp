@@ -73,7 +73,7 @@ int main(int argc, char** argv)
         
     uint16_t data_depth[307200]={0};
         
-    mypub->init("cameraAngle.xml", "FrameCameraAngle", "FrameCameraAngleTopic");
+    mypub->init("../xmls/cameraAngle.xml", "FrameCameraAngle", "FrameCameraAngleTopic");
 
     while(1)
     {        

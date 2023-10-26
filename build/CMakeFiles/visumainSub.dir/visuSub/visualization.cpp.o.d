@@ -522,6 +522,9 @@ CMakeFiles/visumainSub.dir/visuSub/visualization.cpp.o: \
  /usr/local/include/fastdds/dds/subscriber/DataReaderListener.hpp \
  /usr/local/include/fastrtps/qos/SampleRejectedStatus.hpp \
  /usr/local/include/fastdds/dds/core/status/SampleRejectedStatus.hpp \
+ /usr/local/include/fastdds/dds/domain/DomainParticipantFactory.hpp \
+ /usr/local/include/fastrtps/attributes/ParticipantAttributes.h \
+ /usr/local/include/fastdds/dds/domain/qos/DomainParticipantFactoryQos.hpp \
  /usr/local/include/fastdds/dds/subscriber/DataReader.hpp \
  /usr/local/include/fastdds/dds/builtin/topic/PublicationBuiltinTopicData.hpp \
  /usr/local/include/fastdds/dds/core/LoanableSequence.hpp \
@@ -534,5 +537,25 @@ CMakeFiles/visumainSub.dir/visuSub/visualization.cpp.o: \
  /usr/local/include/fastdds/dds/subscriber/qos/SubscriberQos.hpp \
  /usr/local/include/fastrtps/attributes/SubscriberAttributes.h \
  /usr/local/include/fastdds/dds/core/policy/ReaderDataLifecycleQosPolicy.hpp \
+ /usr/local/include/fastdds/dds/subscriber/Subscriber.hpp \
+ /usr/local/include/fastrtps/types/DynamicDataHelper.hpp \
+ /usr/local/include/fastrtps/types/DynamicType.h \
+ /usr/local/include/fastrtps/types/DynamicData.h \
+ /usr/local/include/fastrtps/types/DynamicTypeMember.h \
+ /usr/local/include/fastrtps/types/MemberDescriptor.h \
+ /usr/local/include/fastrtps/types/DynamicDataFactory.h \
+ /usr/local/include/fastrtps/types/DynamicTypeBuilder.h \
  /usr/local/include/fastrtps/subscriber/SampleInfo.h \
- /usr/local/include/fastrtps/rtps/common/Types.h
+ /usr/local/include/fastrtps/rtps/common/Types.h \
+ /usr/local/include/fastrtps/xmlparser/XMLProfileManager.h \
+ /usr/local/include/fastrtps/attributes/PublisherAttributes.h \
+ /usr/local/include/fastrtps/xmlparser/XMLParserCommon.h \
+ /usr/local/include/fastrtps/xmlparser/XMLParser.h \
+ /usr/local/include/fastrtps/transport/TransportDescriptorInterface.h \
+ /usr/local/include/fastrtps/attributes/RequesterAttributes.hpp \
+ /usr/local/include/fastrtps/attributes/PublisherAttributes.h \
+ /usr/local/include/fastrtps/attributes/SubscriberAttributes.h \
+ /usr/local/include/fastrtps/attributes/ReplierAttributes.hpp \
+ /usr/local/include/fastrtps/types/DynamicTypeBuilderPtr.h \
+ /usr/local/include/fastrtps/attributes/LibrarySettingsAttributes.h \
+ /usr/local/include/fastrtps/types/DynamicTypeBuilderFactory.h

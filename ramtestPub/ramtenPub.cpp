@@ -19,7 +19,7 @@ int main()
 
     ScanDynamicPub *mypub;
     mypub = new ScanDynamicPub();
-    initialized = mypub->init("ramtest_ten.xml", "Ten", "ten_topic");
+    initialized = mypub->init("../xmls/ramtest_ten.xml", "Ten", "ten_topic");
     printf("init success\n");
     while(initialized){
             for (int i = 0; i < 10; i++) {

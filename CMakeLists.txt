@@ -54,9 +54,21 @@ target_link_libraries(dummyLidarPub fastrtps fastcdr)
 add_executable(dummyCameraAnglePub dummyPub/dummyCameraAnglePub.cpp ${PUB_SRC})
 target_link_libraries(dummyCameraAnglePub fastrtps fastcdr)
 
+# Dummy Camera publisher
+add_executable(dummyCameraPub dummyPub/dummyCameraPub.cpp ${PUB_SRC})
+target_link_libraries(dummyCameraPub fastrtps fastcdr)
+
 # Lidar publisher
 add_executable(LidarDynamicPub lidarPub/LidarDynamicPub.cpp ${PUB_SRC})
 target_link_libraries(LidarDynamicPub fastrtps fastcdr sl_lidar_sdk)
+
+# # Camera angles publisher
+# add_executable(CameraAnglePub cameraAnglesPub/cameraAnglesDynamicPub.cpp ${PUB_SRC})
+# target_link_libraries(CameraAnglePub fastrtps fastcdr aditof_sdk)
+
+# # Camera publisher
+# add_executable(CameraDynamicPub cameraPub/cameraDynamicPub.cpp ${PUB_SRC})
+# target_link_libraries(CameraDynamicPub fastrtps fastcdr aditof_sdk)
 
 # Visualization subscriber
 add_executable(visumainSub visuSub/visuDynamicSub.cpp ${SUB_SRC} visuSub/visualization.cpp)
@@ -68,9 +80,9 @@ include_directories (${OpenCV_INCLUDE_DIRS})
 add_executable(cameraSub cameraSub/cameraDynamicSub.cpp ${SUB_SRC})
 target_link_libraries(cameraSub fastrtps fastcdr ${OpenCV_LIBS})
 
-# dummy camera publisher
-add_executable(dummyCameraPub dummyPub/dummyCameraPub.cpp ${PUB_SRC})
-target_link_libraries(dummyCameraPub fastrtps fastcdr)
+
+
+
 
 # ramtest pub
 add_executable(ramonePub ramtestPub/ramonePub.cpp ${PUB_SRC})

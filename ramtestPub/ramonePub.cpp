@@ -3,45 +3,31 @@
 
 using eprosima::fastdds::dds::Log;
 
-void fillArray(float array[10]) {
-    static float currentValue = 0.0;
-    static int startIndex = 0;
+void fillArray(float array[150]) {
 
     // Fill array with 0
-    for (int i = 0; i < 10; i++) {
-        array[i] = 0.0;
+    for (int i = 0; i < 150; i++) {
+        array[i] = 99.0;
     }
 
-    // Set the 5 adjacent values
-    for (int i = startIndex; i < startIndex + 5; i++) {
-        int index = i % 10;
-        array[index] = currentValue;
-        currentValue += 0.5;
-        if (currentValue > 15.0) {
-            currentValue = 0.0;
-        }
-    }
-
-    // Update the starting index for the next call
-    startIndex = (startIndex + 1) % 10;
 }
 
 int main()
 { 
     //dummy data
-    float distance_arr[10] = {0.0};
+    float distance_arr[150] = {0.0};
 
     bool initialized = false;
     std::cout << "Starting " << std::endl;
 
     ScanDynamicPub *mypub;
     mypub = new ScanDynamicPub();
-    initialized = mypub->init("ramtest_one.xml", "One", "one_topic");
+    initialized = mypub->init("../xmls/ramtest_one.xml", "One", "one_topic");
 printf("init success\n");
     while(initialized){
         fillArray(distance_arr);
         printf("fill array success\n");
-        mypub->putData_float32_array(distance_arr, 10, 0);
+        mypub->putData_float32_array(distance_arr, 150, 0);
         printf("put data success\n");
         mypub->publish();
         printf("publish success\n");

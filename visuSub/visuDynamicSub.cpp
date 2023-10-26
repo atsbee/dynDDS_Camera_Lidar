@@ -47,7 +47,7 @@ int main()
     std::vector<double> oldxs, oldys;
     std::vector<bool> oldistnull;
 
-    initilized1 = mysub->init("lidar.xml", "SensorData", mytopic);
+    initilized1 = mysub->init("../xmls/lidar.xml", "SensorData", mytopic);
 
     // Initialize vectors to size 360(current) and 720(old)
     initializeData(xs, ys, istnull, 360);
@@ -75,7 +75,7 @@ int main()
     std::vector<double> oldxs2, oldys2;
     std::vector<bool> oldistnull2;
 
-    initilized2 = mysub2->init("cameraAngle.xml", "FrameCameraAngle", "FrameCameraAngleTopic");
+    initilized2 = mysub2->init("../xmls/cameraAngle.xml", "FrameCameraAngle", "FrameCameraAngleTopic");
 
     // Initialize vectors to size 360(current) and 720(old)
     initializeData(xs2, ys2, istnull2, 360);
@@ -270,7 +270,7 @@ int main()
 
         filterpolar2cartesian(cscan2, xs2, ys2, istnull2, &lightsignal2, cradius, y_offset2, theta_offset2);
         getLidarPoints(lidarPoints2, radius, xs2, ys2, istnull2, sf::Color::Blue);
-        getOldPoints(oldlidarPoints2, radius, oldxs2, oldys2, oldistnull2,sf::Color(0,100,255,20), sf::Color(0,100,255,50));
+        getOldPoints(oldlidarPoints2, radius, oldxs2, oldys2, oldistnull2,sf::Color(0,100,255,20), sf::Color(0,1500,255,50));
         getAllPoints(allLidarPoints2, xs2, ys2, oldxs2, oldys2, radius, sf::Color::Blue);
 
         if(lightsignal == 2 || lightsignal2 == 2){

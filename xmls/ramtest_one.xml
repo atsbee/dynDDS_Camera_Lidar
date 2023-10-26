@@ -2,7 +2,7 @@
 <types xmlns="http://www.eprosima.com/XMLSchemas/fastRTPS_Profiles" >
     <type>
         <struct name="One">
-            <member name="array" type="float32" arrayDimensions="1,10"/>
+            <member name="array" type="float32" arrayDimensions="1,150"/>
         </struct>
     </type>
 </types>

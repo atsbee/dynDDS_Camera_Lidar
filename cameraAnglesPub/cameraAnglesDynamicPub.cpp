@@ -116,7 +116,7 @@ int main(int argc, char** argv)
     //For now, we will only use medium mode
     status = camera->setMode("medium");
         
-    mypub->init("cameraAngle.xml", "FrameCameraAngle", "FrameCameraAngleTopic");
+    mypub->init("../xmls/cameraAngle.xml", "FrameCameraAngle", "FrameCameraAngleTopic");
     
     camera->setControl("noise_reduction_threshold", std::to_string(smallSignalThreshold));
 

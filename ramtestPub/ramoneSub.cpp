@@ -20,9 +20,8 @@ int main()
 	std::vector<std::any> anyArray(1);
 
     // Scan data in polar coordinates
-    float cscan[10]={0};
     bool initilized1 = false;
-    initilized1 = mysub->init("ramtest_one.xml", "One", mytopic);
+    initilized1 = mysub->init("../xmls/ramtest_one.xml", "One", mytopic);
 
     if (initilized1)
     {

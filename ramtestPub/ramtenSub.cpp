@@ -21,7 +21,7 @@ int main()
 
     // Scan data in polar coordinates
     bool initilized1 = false;
-    initilized1 = mysub->init("ramtest_ten.xml", "Ten", mytopic);
+    initilized1 = mysub->init("../xmls/ramtest_ten.xml", "Ten", mytopic);
 
     if (initilized1)
     {

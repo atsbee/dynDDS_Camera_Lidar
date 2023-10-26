@@ -376,6 +376,11 @@ CMakeFiles/cameraSub.dir/cameraSub/cameraDynamicSub.cpp.o: \
  /usr/local/include/fastdds/dds/subscriber/DataReaderListener.hpp \
  /usr/local/include/fastrtps/qos/SampleRejectedStatus.hpp \
  /usr/local/include/fastdds/dds/core/status/SampleRejectedStatus.hpp \
+ /usr/local/include/fastdds/dds/domain/DomainParticipantFactory.hpp \
+ /usr/local/include/fastrtps/attributes/ParticipantAttributes.h \
+ /usr/local/include/fastdds/dds/domain/qos/DomainParticipantFactoryQos.hpp \
+ /usr/include/c++/11/mutex /usr/include/c++/11/bits/std_mutex.h \
+ /usr/include/c++/11/bits/unique_lock.h \
  /usr/local/include/fastdds/dds/subscriber/DataReader.hpp \
  /usr/local/include/fastdds/dds/builtin/topic/PublicationBuiltinTopicData.hpp \
  /usr/local/include/fastdds/dds/core/LoanableSequence.hpp \
@@ -388,11 +393,29 @@ CMakeFiles/cameraSub.dir/cameraSub/cameraDynamicSub.cpp.o: \
  /usr/local/include/fastdds/dds/subscriber/qos/SubscriberQos.hpp \
  /usr/local/include/fastrtps/attributes/SubscriberAttributes.h \
  /usr/local/include/fastdds/dds/core/policy/ReaderDataLifecycleQosPolicy.hpp \
+ /usr/local/include/fastdds/dds/subscriber/Subscriber.hpp \
+ /usr/local/include/fastrtps/types/DynamicDataHelper.hpp \
+ /usr/local/include/fastrtps/types/DynamicType.h \
+ /usr/local/include/fastrtps/types/DynamicData.h \
+ /usr/local/include/fastrtps/types/DynamicTypeMember.h \
+ /usr/local/include/fastrtps/types/MemberDescriptor.h \
+ /usr/local/include/fastrtps/types/DynamicDataFactory.h \
+ /usr/local/include/fastrtps/types/DynamicTypeBuilder.h \
  /usr/local/include/fastrtps/subscriber/SampleInfo.h \
  /usr/local/include/fastrtps/rtps/common/Types.h \
- /usr/include/c++/11/condition_variable \
- /usr/include/c++/11/bits/std_mutex.h \
- /usr/include/c++/11/bits/unique_lock.h /usr/include/c++/11/any \
+ /usr/local/include/fastrtps/xmlparser/XMLProfileManager.h \
+ /usr/local/include/fastrtps/attributes/PublisherAttributes.h \
+ /usr/local/include/fastrtps/xmlparser/XMLParserCommon.h \
+ /usr/local/include/fastrtps/xmlparser/XMLParser.h \
+ /usr/local/include/fastrtps/transport/TransportDescriptorInterface.h \
+ /usr/local/include/fastrtps/attributes/RequesterAttributes.hpp \
+ /usr/local/include/fastrtps/attributes/PublisherAttributes.h \
+ /usr/local/include/fastrtps/attributes/SubscriberAttributes.h \
+ /usr/local/include/fastrtps/attributes/ReplierAttributes.hpp \
+ /usr/local/include/fastrtps/types/DynamicTypeBuilderPtr.h \
+ /usr/local/include/fastrtps/attributes/LibrarySettingsAttributes.h \
+ /usr/local/include/fastrtps/types/DynamicTypeBuilderFactory.h \
+ /usr/include/c++/11/condition_variable /usr/include/c++/11/any \
  /usr/local/include/opencv4/opencv2/highgui/highgui.hpp \
  /usr/local/include/opencv4/opencv2/highgui.hpp \
  /usr/local/include/opencv4/opencv2/core.hpp \
@@ -435,7 +458,6 @@ CMakeFiles/cameraSub.dir/cameraSub/cameraDynamicSub.cpp.o: \
  /usr/local/include/opencv4/opencv2/core/cvstd.inl.hpp \
  /usr/include/c++/11/complex \
  /usr/local/include/opencv4/opencv2/core/utility.hpp \
- /usr/include/c++/11/mutex \
  /usr/local/include/opencv4/opencv2/core/optim.hpp \
  /usr/local/include/opencv4/opencv2/core/ovx.hpp \
  /usr/local/include/opencv4/opencv2/core/cvdef.h \
