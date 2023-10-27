@@ -44,15 +44,14 @@ int main()
 
     ScanDynamicSub *mysub;
     mysub = new ScanDynamicSub();
-    std::string mytopic = "FrameCameraTopic";
     std::vector<std::any> anyArray(4);
 
     const int frameHeight = static_cast<int>(480);
     const int frameWidth = static_cast<int>(640);
 
-    initilized = mysub->init("../xmls/camera.xml", "FrameCamera", mytopic);
+    initilized = mysub->init("../xmls/camera.xml", "FrameCamera", "FrameCameraTopic");
     if(initilized){
-        mysub->run(anyArray.data(), anyArray.size(), mytopic);
+        mysub->run(anyArray.data(), anyArray.size());
     }
     else{
         std::cout << "Error initilizing subscriber." << std::endl;
@@ -66,7 +65,7 @@ int main()
     cv::Mat depth_mat;
 
     while(1){
-        if(mysub->m_listener.n_samples >= 1){
+        if(mysub->m_listener.n_newdataflag >= 1){
             while (cv::waitKey(1) != 27 && getWindowProperty("Depth Image", cv::WND_PROP_AUTOSIZE) >= 0
                     && getWindowProperty("Infrared Image", cv::WND_PROP_AUTOSIZE) >= 0)
             {   
@@ -93,7 +92,7 @@ int main()
                 imwrite("../cameraImages/depth.jpg", depth_mat);
                 imwrite("../cameraImages/ir.jpg", ir_mat);
                                 
-                mysub->m_listener.n_samples = 0;  //listener_.newFrameFlag_ = 0; //Flag zuruecksetzten 
+                mysub->m_listener.n_newdataflag = 0;  //Flag zuruecksetzten 
             }
         }
     }

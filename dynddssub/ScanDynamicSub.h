@@ -41,7 +41,7 @@ public:
     bool init(std::string xml_path, std::string dyntype_name, std::string topic_name);
 
     // run the subscriber
-    void run(std::any *anyArray, std::size_t anySize, std::string topic_name);
+    void run(std::any *anyArray, std::size_t anySize);
 
 private:
     eprosima::fastdds::dds::DomainParticipant* mp_participant;
@@ -64,7 +64,7 @@ public:
     public:
         SubListener(ScanDynamicSub* sub)
             : n_matched(0)
-            , n_samples(0)
+            , n_newdataflag(0)
             , subscriber_(sub)
         {
         }
@@ -81,15 +81,9 @@ public:
 
         int n_matched;
 
-        uint32_t n_samples;
-
-        std::mutex types_mx_;
-
-        std::condition_variable types_cv_;
+        uint32_t n_newdataflag;
 
         eprosima::fastrtps::types::DynamicType_ptr received_type_;
-
-        std::atomic<bool> reception_flag_{false};
 
         ScanDynamicSub* subscriber_;
 

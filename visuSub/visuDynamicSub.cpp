@@ -29,7 +29,6 @@ int main()
     //DDS Subscriber1
     ScanDynamicSub *mysub;
     mysub = new ScanDynamicSub();
-    std::string mytopic = "Scanner1Topic";
 	std::vector<std::any> anyArray(3);
 
     // Scan data in polar coordinates
@@ -47,7 +46,7 @@ int main()
     std::vector<double> oldxs, oldys;
     std::vector<bool> oldistnull;
 
-    initilized1 = mysub->init("../xmls/lidar.xml", "SensorData", mytopic);
+    initilized1 = mysub->init("../xmls/lidar.xml", "SensorData", "Scanner1Topic");
 
     // Initialize vectors to size 360(current) and 720(old)
     initializeData(xs, ys, istnull, 360);
@@ -57,7 +56,6 @@ int main()
     //DDS Subscriber2
     ScanDynamicSub *mysub2;
     mysub2 = new ScanDynamicSub();
-    std::string mytopic2 = "FrameCameraAngleTopic";
 	std::vector<std::any> anyArray2(3);
 
     // Scan data in polar coordinates
@@ -83,15 +81,11 @@ int main()
 
     if (initilized1)
     {
-		printf("init success\n");
-		mysub->run(anyArray.data(), anyArray.size(), mytopic);
-		printf("run success\n");
+		mysub->run(anyArray.data(), anyArray.size());
     }
     if (initilized2)
     {
-		printf("init2 success\n");
-		mysub2->run(anyArray2.data(), anyArray2.size(), mytopic2);
-		printf("run2 success\n");
+		mysub2->run(anyArray2.data(), anyArray2.size());
     }
 
     /*Window/Video mode*/
@@ -196,7 +190,7 @@ int main()
         }
 
         //if(cscan[360] == 2 && cscan[361] == 2){
-        if(mysub->m_listener.n_samples == 0){    
+        if(mysub->m_listener.n_newdataflag == 0){    
             if(unconnectedcnt > 1000){
                 lightsignal = 3;
             } 
@@ -214,7 +208,7 @@ int main()
             oldistnull.insert(oldistnull.end(), istnull.begin(), istnull.end());
 
             // set indicator for new values to false
-            mysub->m_listener.n_samples = 0;
+            mysub->m_listener.n_newdataflag = 0;
 
             unconnectedcnt = 0;
         }
@@ -232,7 +226,7 @@ int main()
 //sud2
         if (anyArray2[1].type() == typeid(uint16_t*)){
             uint16_t* buffer_cscan2 = std::any_cast<std::uint16_t*>(anyArray2[1]);
-            for (int i = 0; i < 67; i++){//TODO: 120
+            for (int i = 0; i < 67; i++){
                 cscan2[i] = buffer_cscan2[i];
             }
         } 
@@ -241,7 +235,7 @@ int main()
         }
 
         //if(cscan[360] == 2 && cscan[361] == 2){
-        if(mysub2->m_listener.n_samples == 0){    
+        if(mysub2->m_listener.n_newdataflag == 0){    
             if(unconnectedcnt > 1000){
                 lightsignal2 = 3; //TODO: lightsignal2
             } 
@@ -259,7 +253,7 @@ int main()
             oldistnull2.insert(oldistnull2.end(), istnull2.begin(), istnull2.end());
 
             // set indicator for new values to false
-            mysub2->m_listener.n_samples = 0;
+            mysub2->m_listener.n_newdataflag = 0;
 
             unconnectedcnt = 0;
         }

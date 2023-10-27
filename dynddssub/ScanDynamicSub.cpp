@@ -125,7 +125,6 @@ ScanDynamicSub::ScanDynamicSub()
 
 bool ScanDynamicSub::init(std::string xml_path, std::string dyntype_name, std::string topic_name)
 {
-/*orginal init*/
     //Do not enable entities on creation
     DomainParticipantFactoryQos factory_qos;
     factory_qos.entity_factory().autoenable_created_entities = false;
@@ -150,7 +149,7 @@ bool ScanDynamicSub::init(std::string xml_path, std::string dyntype_name, std::s
     qos_ = DATAREADER_QOS_DEFAULT;
     qos_.reliability().kind = RELIABLE_RELIABILITY_QOS;    
 
-/*original on type discovery*/
+
     if (eprosima::fastrtps::xmlparser::XMLP_ret::XML_OK !=
             eprosima::fastrtps::xmlparser::XMLProfileManager::loadXMLFile(xml_path))
     {
@@ -161,15 +160,9 @@ bool ScanDynamicSub::init(std::string xml_path, std::string dyntype_name, std::s
     eprosima::fastrtps::types::DynamicType_ptr dyn_type = eprosima::fastrtps::xmlparser::XMLProfileManager::getDynamicTypeByName(dyntype_name)->build();
     m_listener.received_type_ = dyn_type; 
 
-/*original initilize entities*/
     TypeSupport m_type(new eprosima::fastrtps::types::DynamicPubSubType(dyn_type));
     // //REGISTER THE TYPE
-    // m_type.get()->auto_fill_type_information(false);
-    // // m_type.get()->auto_fill_type_object(true);
-    // m_type.get()->auto_fill_type_object(false); //TODO: check if this is needed
-
     m_type.register_type(mp_participant);
-    //TODO: vieleicht doppelt register type in initialize entities und hier noch recieved type setzen
     
     if (mp_subscriber == nullptr)
     {
@@ -356,14 +349,14 @@ void ScanDynamicSub::SubListener::on_data_available(DataReader* reader)
                     }//end switch over type kind
 
                 }//end for loop over members
-                this->n_samples++; //used as indicator of new data received
+                this->n_newdataflag++; //used as indicator of new data received
             }//end if alive instance state
         }//end if take next sample
     }
 }
 
 
-void ScanDynamicSub::run(std::any *anyArray, size_t anyArraySize, std::string topic_name)
+void ScanDynamicSub::run(std::any *anyArray, size_t anyArraySize)
 {
     std::cout << "Subscriber running." << std::endl;
 

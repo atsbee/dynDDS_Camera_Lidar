@@ -16,28 +16,27 @@ int main()
     //DDS Subscriber1
     ScanDynamicSub *mysub;
     mysub = new ScanDynamicSub();
-    std::string mytopic = "ten_topic";
 	std::vector<std::any> anyArray(10);
 
     // Scan data in polar coordinates
     bool initilized1 = false;
-    initilized1 = mysub->init("../xmls/ramtest_ten.xml", "Ten", mytopic);
+    initilized1 = mysub->init("../xmls/ramtest_ten.xml", "Ten", "ten_topic");
 
     if (initilized1)
     {
 		printf("init success\n");
-		mysub->run(anyArray.data(), anyArray.size(), mytopic);
+		mysub->run(anyArray.data(), anyArray.size());
 		printf("run success\n");
     }
 
     
     while (1)
     {
-        if(mysub->m_listener.n_samples == 0){    
+        if(mysub->m_listener.n_newdataflag == 0){    
         }
         else{
             printf("new data \n");
-            mysub->m_listener.n_samples = 0;
+            mysub->m_listener.n_newdataflag = 0;
         }
     }
 

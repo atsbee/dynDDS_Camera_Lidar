@@ -198,7 +198,6 @@ int main(int argc, char** argv)
             std::cout << "Time difference6: " << differenceTime6 << std::endl;
             
             auto startTime9 = std::chrono::steady_clock::now(); 
-            //mypub->adiFrame_.index(mypub->adiFrame_.index() + 1);
             samples_index++;
             mypub->putData_uint32_value(samples_index, INDEX_MemID); //TODO: index is now being counted here
             auto endTime9 = std::chrono::steady_clock::now();;

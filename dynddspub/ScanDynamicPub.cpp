@@ -1,16 +1,3 @@
-// Copyright 2016 Proyectos y Sistemas de Mantenimiento SL (eProsima).
-//
-// Licensed under the Apache License, Version 2.0 (the "License");
-// you may not use this file except in compliance with the License.
-// You may obtain a copy of the License at
-//
-//     http://www.apache.org/licenses/LICENSE-2.0
-//
-// Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an "AS IS" BASIS,
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the License for the specific language governing permissions and
-// limitations under the License.
 
 /**
  * @file ScanDynamicPub.cpp
@@ -18,19 +5,7 @@
  */
 
 #include "ScanDynamicPub.h"
-#include <fastrtps/attributes/ParticipantAttributes.h>
-#include <fastrtps/attributes/PublisherAttributes.h>
-#include <fastdds/dds/publisher/Publisher.hpp>
-#include <fastdds/dds/publisher/qos/PublisherQos.hpp>
-#include <fastdds/dds/publisher/DataWriter.hpp>
-#include <fastdds/dds/publisher/qos/DataWriterQos.hpp>
-#include <fastdds/dds/domain/DomainParticipantFactory.hpp>
 
-#include <fastrtps/types/DynamicDataFactory.h>
-
-#include <fastrtps/xmlparser/XMLProfileManager.h>
-
-#include <thread>
 
 using namespace eprosima::fastdds::dds;
 
@@ -65,7 +40,6 @@ bool ScanDynamicPub::init(std::string xml_path, std::string dyntype_name, std::s
 
     //REGISTER THE TYPE
     m_type.get()->auto_fill_type_information(false);
-    // m_type.get()->auto_fill_type_object(true);
     m_type.get()->auto_fill_type_object(false); //TODO: check if this is needed
 
 

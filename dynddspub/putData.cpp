@@ -21,6 +21,15 @@ void ScanDynamicPub::putData_uint32_array(uint32_t *distance, int size, int memb
     m_ScanDyn->return_loaned_value(array); 
 }
 
+void ScanDynamicPub::putData_int16_array(int16_t *distance, int size, int member_id)
+{
+    eprosima::fastrtps::types::DynamicData* array = m_ScanDyn->loan_value(member_id);
+    for(unsigned int i=0; i<size; i++){
+        array->set_int16_value(distance[i], array->get_array_index({0, i}));
+    }
+    m_ScanDyn->return_loaned_value(array); 
+}
+
 void ScanDynamicPub::putData_int32_array(int32_t *distance, int size, int member_id)
 {
     eprosima::fastrtps::types::DynamicData* array = m_ScanDyn->loan_value(member_id);
@@ -66,6 +75,11 @@ void ScanDynamicPub::putData_uint16_value(uint16_t value, int member_id)
 void ScanDynamicPub::putData_uint32_value(uint32_t value, int member_id)
 {
     m_ScanDyn->set_uint32_value(value, member_id);
+}
+
+void ScanDynamicPub::putData_int16_value(int16_t value, int member_id)
+{
+    m_ScanDyn->set_int16_value(value, member_id);
 }
 
 void ScanDynamicPub::putData_int32_value(int32_t value, int member_id)
