@@ -46,7 +46,7 @@ int main()
     std::vector<double> oldxs, oldys;
     std::vector<bool> oldistnull;
 
-    initilized1 = mysub->init("../xmls/lidar.xml", "SensorData", "Scanner1Topic");
+    initilized1 = mysub->init("../xmls/lidar.xml", "LidarData", "LidarTopic");
 
     // Initialize vectors to size 360(current) and 720(old)
     initializeData(xs, ys, istnull, 360);
@@ -137,14 +137,18 @@ int main()
     sf::Vector2f point2(-2880, -685);
     sf::Vector2f point3(-2880, 6784);
 
-    createTriangle(triangle, sf::Color(230, 230, 230,120), sf::Color(0, 0, 255, 120), point1, point2, point3);
+    getTriangle(triangle, sf::Color(230, 230, 230,120), sf::Color(0, 0, 255, 120), point1, point2, point3);
 
+    // //Set fancy lights
     // std::vector<sf::Sprite> light;
     // std::vector<sf::Texture> lightTexture;
+    // std::vector<SpriteTexture> lightStruct;
+    // lightStruct.push_back(getImage()) = {logo, logoTexture, "../visuSub/images/TH_Koeln_Logo2.png", 2, (BREITEGRENZE -900), (HOEHENGRENZE -600)};
+
     // getLights(light, lightTexture, radius);
 
-    sf::CircleShape billoLight[4];
-    getbilloLight(billoLight, radius);
+    sf::CircleShape dotLight[4];
+    getdotLight(dotLight, radius);
 
     sf::CircleShape circles[4];
     sf::CircleShape circles2[4];
@@ -189,7 +193,6 @@ int main()
             //printf("wrong type1\n");
         }
 
-        //if(cscan[360] == 2 && cscan[361] == 2){
         if(mysub->m_listener.n_newdataflag == 0){    
             if(unconnectedcnt > 1000){
                 lightsignal = 3;
@@ -280,7 +283,7 @@ int main()
             lightsignal = 1;//yellow
         }
 
-        plotValues(window, circles, circles2, labels, lidarPoints, lidarPoints2, grid, poles,logo, lidarImage, roboImage, billoLight[lightsignal]
+        plotValues(window, circles, circles2, labels, lidarPoints, lidarPoints2, grid, poles,logo, lidarImage, roboImage, dotLight[lightsignal]
                     , oldlidarPoints, allLidarPoints, oldlidarPoints2, allLidarPoints2,filtermodus, triangle);
         
     }

@@ -1,0 +1,5 @@
+# Ignore CMake files in /build directory
+/build/CMakeFiles/
+/build/CMakeCache.txt
+/build/*.cmake
+.vscode/

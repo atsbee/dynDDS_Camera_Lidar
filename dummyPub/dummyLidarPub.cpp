@@ -57,7 +57,7 @@ int main()
 
     ScanDynamicPub *mypub;
     mypub = new ScanDynamicPub();
-    initialized = mypub->init("../xmls/lidar.xml", "SensorData", "Scanner1Topic");
+    initialized = mypub->init("../xmls/lidar.xml", "LidarData", "LidarTopic");
 
     while(initialized){
         fillArray(distance_arr);

@@ -36,7 +36,7 @@ void getBlindSpot(sf::VertexArray *blindSpot){
     blindSpot->append(sf::Vertex(sf::Vector2f(BREITEGRENZE , 508), blindSpotColor));
 }
 
-void createTriangle(sf::ConvexShape& convexShape, const sf::Color& color1, const sf::Color& color2, 
+void getTriangle(sf::ConvexShape& convexShape, const sf::Color& color1, const sf::Color& color2, 
                     const sf::Vector2f& point1, const sf::Vector2f& point2, const sf::Vector2f& point3)
 {
     convexShape.setPointCount(3);  // Set the number of vertices to 3 (for a triangle)
@@ -147,16 +147,16 @@ void getLights(std::vector<sf::Sprite> &light, std::vector<sf::Texture> &lightTe
     }
 }
 
-void getbilloLight(sf::CircleShape *billoLight, const int radius){
+void getdotLight(sf::CircleShape *dotLight, const int radius){
     for(int i = 0; i < 4; i++){
-        billoLight[i].setRadius(90*radius);
-        billoLight[i].setOrigin(90*radius,90*radius);
-        billoLight[i].setPosition((BREITEGRENZE -500) *radius, (-HOEHENGRENZE + 200) *radius);
+        dotLight[i].setRadius(90*radius);
+        dotLight[i].setOrigin(90*radius,90*radius);
+        dotLight[i].setPosition((BREITEGRENZE -500) *radius, (-HOEHENGRENZE + 200) *radius);
     }
-    billoLight[0].setFillColor(sf::Color::Green);
-    billoLight[1].setFillColor(sf::Color::Yellow);
-    billoLight[2].setFillColor(sf::Color::Red);
-    billoLight[3].setFillColor(sf::Color::Black);
+    dotLight[0].setFillColor(sf::Color::Green);
+    dotLight[1].setFillColor(sf::Color::Yellow);
+    dotLight[2].setFillColor(sf::Color::Red);
+    dotLight[3].setFillColor(sf::Color::Black);
 }
 
 void getCircles(sf::CircleShape *circles, sf::Color *colors, float *cradius, float y_offset){
@@ -267,63 +267,6 @@ void getOldPoints(sf::CircleShape *oldlidarPoints, int radius, std::vector<doubl
     }
 }
 
-//außer Betrieb
-void polar2cartesian(std::uint16_t *cscan, std::vector<double>& xs, std::vector<double>& ys, std::vector<bool>& istnull, int *lightsignal, float *cradius)
-{
-    double x, y, rho, theta;
-    int gelb = 0, rot = 0;
-
-    if(*lightsignal == 2){ //last scan was red
-        *lightsignal = 1;
-    }
-    else {
-        *lightsignal = 0;
-    }
-
-    for (int radian = 0; radian < 360; ++radian)
-    {    
-
-
-        theta = (((359-radian) + 135) % 360)* M_PI / 180.0; //wrong way around and 45° offset +90°
-        if((cscan[(radian+359) % 360] == 0 && cscan[(radian+1) % 360] == 0 && cscan[radian] > 0) || (theta < 100 && theta > 350)){
-            rho = 0;
-        }
-        else{
-            rho = static_cast<double>(cscan[radian]); /* Generate the rho value based on the current iteration */;
-        }
-
-        //if 5consecutive rho values are bigger than 0 and smaller than 1000 -> gelb++ or if 5consecutive rho values are smaller than 500 -> rot++
-        if(rho > 0 && rho < cradius[1] && radian > 100 && radian < 350){ //blank out the 110° where the robot is
-            gelb++;
-        }
-        if(rho > 0 && rho < cradius[2] && radian > 100 && radian < 350){
-            rot++;
-        }
-        if (rho > cradius[1]){
-            gelb = 0;
-        }
-        if(rho > cradius[2]){
-            rot = 0;
-        }
-
-        if(gelb == 5 && *lightsignal != 2){
-            *lightsignal = 1;
-        }
-        if(rot == 5){
-            *lightsignal = 2;
-        }
-        x = rho * std::cos(theta);
-        y = rho * std::sin(theta);
-        xs.push_back(x);
-        ys.push_back(y);
-        if(rho == 0){
-            istnull.push_back(true);
-        }
-        else{
-            istnull.push_back(false);
-        }
-    }
-}
 
 void filterpolar2cartesian(std::uint16_t *cscan, std::vector<double>& xs, std::vector<double>& ys, std::vector<bool>& istnull, int *lightsignal, 
                             float *cradius, double y_offset, int theta_offset)
@@ -392,14 +335,14 @@ void filterpolar2cartesian(std::uint16_t *cscan, std::vector<double>& xs, std::v
 // void plotValues(sf::RenderWindow& window, sf::CircleShape *circles, sf::Text *labels, sf::CircleShape *lidarPoints, sf::VertexArray path, 
 //             const sf::Sprite& sprite, const sf::Sprite& light, sf::VertexArray grid, sf::Sprite& lidarImage, sf::VertexArray blindspot, sf::Sprite& info)
 void plotValues(sf::RenderWindow& window, sf::CircleShape *circles, sf::CircleShape *circles2, sf::Text *labels, sf::CircleShape *lidarPoints, sf::CircleShape *lidarPoints2, sf::VertexArray grid, sf::RectangleShape *poles, sf::Sprite& logo, sf::Sprite& lidarImage, 
-            sf::Sprite& roboImage, sf::CircleShape &billoLight, sf::CircleShape *oldPoints, sf::CircleShape *allLidarPoints, sf::CircleShape *oldPoints2, sf::CircleShape *allLidarPoints2, int filtermodus, sf::ConvexShape &triangle)
+            sf::Sprite& roboImage, sf::CircleShape &dotLight, sf::CircleShape *oldPoints, sf::CircleShape *allLidarPoints, sf::CircleShape *oldPoints2, sf::CircleShape *allLidarPoints2, int filtermodus, sf::ConvexShape &triangle)
 {
     window.clear(sf::Color::White);
     window.draw(grid);
     window.draw(logo);
     
     //window.draw(light);
-    window.draw(billoLight);
+    window.draw(dotLight);
 
     window.draw(triangle);
     for(int i = 0; i < 4; i++){

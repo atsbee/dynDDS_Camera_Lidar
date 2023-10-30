@@ -49,7 +49,7 @@ void handleKeyboardInput(int *filtermodus);
 
 void initializeData(std::vector<double>& xs, std::vector<double>& ys, std::vector<bool>& istnull, int size);
 
-void createTriangle(sf::ConvexShape& convexShape, const sf::Color& color1, const sf::Color& color2, 
+void getTriangle(sf::ConvexShape& convexShape, const sf::Color& color1, const sf::Color& color2, 
                     const sf::Vector2f& point1, const sf::Vector2f& point2, const sf::Vector2f& point3);
 
 void getPoles(sf::RectangleShape *poles, const int radius);
@@ -58,11 +58,7 @@ void getTHLogo(sf::Sprite& logo, sf::Texture &logoTexture, const int radius);
 
 void getLights(std::vector<sf::Sprite> &light, std::vector<sf::Texture> &lightTexture, const int radius);
 
-void getbilloLight(sf::CircleShape *billoLight, const int radius);
-
-void getLidarImage(sf::Sprite& lidar, sf::Texture &lidarTexture, const int radius);
-
-void getRoboImage(sf::Sprite& robo, sf::Texture &roboTexture, const int radius);
+void getdotLight(sf::CircleShape *dotLight, const int radius);
 
 void getCircles(sf::CircleShape *circles, sf::Color *colors, float *cradius, float y_offset);
 
@@ -78,14 +74,11 @@ void getAllPoints(sf::CircleShape *allLidarPoints, std::vector<double>& xs, std:
 
 void getOldPoints(sf::CircleShape *oldlidarPoints, int radius, std::vector<double>& oldxs, std::vector<double>& oldys, std::vector<bool>& oldistnull, sf::Color color1, sf::Color color2);
 
-//außer Betrieb
-void polar2cartesian(std::uint16_t *cscan, std::vector<double>& xs, std::vector<double>& ys, std::vector<bool>& istnull, int *lightsignal, float *cradius);
-
 void filterpolar2cartesian(std::uint16_t *cscan, std::vector<double>& xs, std::vector<double>& ys, std::vector<bool>& istnull, int *lightsignal, 
                             float *cradius, double y_offset, int theta_offset);
 
 void plotValues(sf::RenderWindow& window, sf::CircleShape *circles, sf::CircleShape *circles2, sf::Text *labels, sf::CircleShape *lidarPoints, sf::CircleShape *lidarPoints2, sf::VertexArray grid, 
-                        sf::RectangleShape *poles, sf::Sprite& logo, sf::Sprite& lidarImage, sf::Sprite& roboImage, sf::CircleShape &billoLight, 
+                        sf::RectangleShape *poles, sf::Sprite& logo, sf::Sprite& lidarImage, sf::Sprite& roboImage, sf::CircleShape &dotLight, 
                         sf::CircleShape *oldPoints, sf::CircleShape *allLidarPoints, sf::CircleShape *oldPoints2, sf::CircleShape *allLidarPoints2, int filtermodus, sf::ConvexShape &triangle);
 
 
