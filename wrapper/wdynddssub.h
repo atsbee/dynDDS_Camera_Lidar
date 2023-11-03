@@ -1,5 +1,5 @@
-#ifndef __WARLIDARSUBSCRIBER_H__
-#define __WARLIDARSUBSCRIBER_H__
+#ifndef __WDYNDDSSUB_H__
+#define __WDYNDDSSUB_H__
 
 #ifdef __cplusplus
 extern "C" {
@@ -18,4 +18,4 @@ int subscriber_run(subscriber_t *sub, uint16_t *cscan);
 }
 #endif
 
-#endif /* __WARLIDARSUBSCRIBER_H__ */
+#endif /* __WDYNDDSSUB_H__ */
